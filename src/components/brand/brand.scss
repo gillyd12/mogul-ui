@@ -1,0 +1,21 @@
+@import "../../styles/variables.scss";
+
+#mogul-brand {
+  line-height: 48px;
+  vertical-align: middle;
+  padding-left: 24px;
+  padding-right: 24px;
+  color: $brand-title;
+}
+
+.brand-title {
+  font-size: $brand-font-size;
+  font-weight: $weight-bold;
+}
+
+.subtitle {
+  font-style: italic;
+  padding-left: 10px;
+  margin-top: 0px;
+  padding-top: 3px;
+}
