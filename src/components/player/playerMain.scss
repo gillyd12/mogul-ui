@@ -45,7 +45,7 @@ table tr td:last-child {
 td {
   border-top: 0;
   border-bottom: 0;
-  border-right-style: dotted;
+  //border-right-style: dotted;
 }
 
 tbody > tr {
@@ -68,7 +68,7 @@ thead > tr > th > div {
 }
 
 .table td {
-  border-right: 1px dotted $steel-gray;
+  //border-right: 1px dotted $steel-gray;
 }
 
 i:hover {
@@ -93,6 +93,10 @@ td:not(.player) {
 .fa-sort-down {
   vertical-align: top;
   //color: $deep-black;
+}
+
+.table.is-bordered td, .table.is-bordered th {
+  border-width: 0px;
 }
 
 .sorted-item {
