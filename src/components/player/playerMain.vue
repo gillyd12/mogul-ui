@@ -43,42 +43,42 @@
         <h6 class="title is-6">Position</h6>
         <div class="control">
           <label class="checkbox">
-            <input class='position-filter' type="checkbox" v-on:click='_filter' value="1B"> 1B
+            <input class='position-filter' type="checkbox" v-model="filteredPosition" value="1B"> 1B
           </label>
           <label class="checkbox">
-            <input class='position-filter' type="checkbox" v-on:click='_filter' value="LF"> LF
+            <input class='position-filter' type="checkbox" v-model="filteredPosition" value="LF"> LF
           </label>
           <label class="checkbox">
-            <input class='position-filter' type="checkbox" v-on:click='_filter' value="SP"> SP
-          </label>
-        </div>
-        <div class="control">
-          <label class="checkbox">
-            <input class='position-filter' type="checkbox" v-on:click='_filter' value="2B"> 2B
-          </label>
-          <label class="checkbox">
-            <input class='position-filter' type="checkbox" v-on:click='_filter' value="CF"> CF
-          </label>
-          <label class="checkbox">
-            <input class='position-filter' type="checkbox" v-on:click='_filter' value="RP"> RP
+            <input class='position-filter' type="checkbox" v-model="filteredPosition" value="SP"> SP
           </label>
         </div>
         <div class="control">
           <label class="checkbox">
-            <input class='position-filter' type="checkbox" v-on:click='_filter' value="3B"> 3B
+            <input class='position-filter' type="checkbox" v-model="filteredPosition" value="2B"> 2B
           </label>
           <label class="checkbox">
-            <input class='position-filter' type="checkbox" v-on:click='_filter' value="RF"> RF
+            <input class='position-filter' type="checkbox" v-model="filteredPosition" value="CF"> CF
           </label>
-        </div>
-        <div class="control">
           <label class="checkbox">
-            <input class='position-filter' type="checkbox" v-on:click='_filter' value="SS"> SS
+            <input class='position-filter' type="checkbox" v-model="filteredPosition" value="RP"> RP
           </label>
         </div>
         <div class="control">
           <label class="checkbox">
-            <input class='position-filter' type="checkbox" v-on:click='_filter' value="C"> C
+            <input class='position-filter' type="checkbox" v-model="filteredPosition" value="3B"> 3B
+          </label>
+          <label class="checkbox">
+            <input class='position-filter' type="checkbox" v-model="filteredPosition" value="RF"> RF
+          </label>
+        </div>
+        <div class="control">
+          <label class="checkbox">
+            <input class='position-filter' type="checkbox" v-model="filteredPosition" value="SS"> SS
+          </label>
+        </div>
+        <div class="control">
+          <label class="checkbox">
+            <input class='position-filter' type="checkbox" v-model="filteredPosition" value="C"> C
           </label>
         </div>
       </div>
@@ -87,15 +87,15 @@
         <h6 class="title is-6">Bats</h6>
         <div class="control">
           <label class="radio">
-            <input class='bats-filter' type="radio" name="bats" v-on:click='_filter' value="L">
+            <input class='bats-filter' type="radio" name="bats" v-model="filteredBats" value="L">
             L
           </label>
           <label class="radio">
-            <input class='bats-filter' type="radio" name="bats" v-on:click='_filter' value="R">
+            <input class='bats-filter' type="radio" name="bats" v-model="filteredBats" value="R">
             R
           </label>
           <label class="radio">
-            <input class='bats-filter' type="radio" name="bats" v-on:click='_filter' value="S">
+            <input class='bats-filter' type="radio" name="bats" v-model="filteredBats" value="S">
             S
           </label>
         </div>
@@ -105,11 +105,11 @@
         <h6 class="title is-6">Throws</h6>
         <div class="control">
           <label class="radio">
-            <input class='throws-filter' type="radio" name="throws" v-on:click='_filter' value="L">
+            <input class='throws-filter' type="radio" name="throws" v-model="filteredThrows" value="L">
             L
           </label>
           <label class="radio">
-            <input class='throws-filter' type="radio" name="throws" v-on:click='_filter' value="R">
+            <input class='throws-filter' type="radio" name="throws" v-model="filteredThrows" value="R">
             R
           </label>
         </div>
@@ -118,35 +118,35 @@
         <h6 class="title is-6">Age</h6>
         <div class="control">
           <label class="checkbox">
-            <input class="age-filter" type="checkbox" v-on:click='_filter' value="16">16
+            <input class="age-filter" type="checkbox" v-model="filteredAges" value="16">16
           </label>
           <label class="checkbox">
-            <input class="age-filter" type="checkbox" v-on:click='_filter' value="17">17
+            <input class="age-filter" type="checkbox" v-model="filteredAges" value="17">17
           </label>
           <label class="checkbox">
-            <input class="age-filter" type="checkbox" v-on:click='_filter' value="18">18
-          </label>
-        </div>
-        <div class="control">
-          <label class="checkbox">
-            <input class="age-filter" type="checkbox" v-on:click='_filter' value="19">19
-          </label>
-          <label class="checkbox">
-            <input class="age-filter" type="checkbox" v-on:click='_filter' value="20">20
-          </label>
-          <label class="checkbox">
-            <input class="age-filter" type="checkbox" v-on:click='_filter' value="21">21
+            <input class="age-filter" type="checkbox" v-model="filteredAges" value="18">18
           </label>
         </div>
         <div class="control">
           <label class="checkbox">
-            <input class="age-filter" type="checkbox" v-on:click='_filter' value="22">22
+            <input class="age-filter" type="checkbox" v-model="filteredAges" value="19">19
           </label>
           <label class="checkbox">
-            <input class="age-filter" type="checkbox" v-on:click='_filter' value="23">23
+            <input class="age-filter" type="checkbox" v-model="filteredAges" value="20">20
           </label>
           <label class="checkbox">
-            <input class="age-filter" type="checkbox" v-on:click='_filter' value="24">24
+            <input class="age-filter" type="checkbox" v-model="filteredAges" value="21">21
+          </label>
+        </div>
+        <div class="control">
+          <label class="checkbox">
+            <input class="age-filter" type="checkbox" v-model="filteredAges" value="22">22
+          </label>
+          <label class="checkbox">
+            <input class="age-filter" type="checkbox" v-model="filteredAges" value="23">23
+          </label>
+          <label class="checkbox">
+            <input class="age-filter" type="checkbox" v-model="filteredAges" value="24">24
           </label>
         </div>
       </div>
@@ -291,8 +291,8 @@
         limit: '10000',
         players: [],
         filteredAges: [],
-        filteredThrows: [],
-        filteredBats: [],
+        filteredThrows: '',
+        filteredBats: '',
         filteredPosition: [],
         filteredYear: []
       }
@@ -301,9 +301,25 @@
       this.getPlayers()
     },
     updated () {
-      console.log('called updated')
+//      console.log('called updated')
+//      this.getPlayers()
     },
     computed: {},
+    watch: {
+      filteredBats: function () {
+        this.getPlayers()
+      },
+      filteredThrows: function () {
+        this.getPlayers()
+      },
+      filteredAges: function () {
+        this.getPlayers()
+      },
+      filteredPosition: function () {
+        this.getPlayers()
+      }
+
+    },
     methods: {
       getPlayers: function () {
         this.players = []
@@ -334,11 +350,11 @@
         if (this.$data.filteredAges.length > 0) {
           parsed.age = _.map(this.$data.filteredAges).join(',')
         }
-        if (this.$data.filteredThrows.length > 0) {
-          parsed.throws = _.map(this.$data.filteredThrows).join(',')
+        if (this.$data.filteredThrows !== '') {
+          parsed.throws = this.$data.filteredThrows
         }
-        if (this.$data.filteredBats.length > 0) {
-          parsed.bats = _.map(this.$data.filteredBats).join(',')
+        if (this.$data.filteredBats !== '') {
+          parsed.bats = this.$data.filteredBats
         }
         if (this.$data.filteredPosition.length > 0) {
           parsed.position = _.map(this.$data.filteredPosition).join(',')
@@ -371,49 +387,6 @@
         }
         addClass(category)
         this.$data.sort = categoryToModelName(category)
-      },
-      _filter: function (event) {
-        let ages = document.querySelectorAll('.age-filter')
-        for (let c = 0; c < ages.length; c++) {
-          let item = ages[c]
-          if (item.checked) {
-            addItem(this.$data.filteredAges, item)
-          } else {
-            removeItem(this.$data.filteredAges, item)
-          }
-        }
-
-        let throws = document.querySelectorAll('.throws-filter')
-        for (let c = 0; c < throws.length; c++) {
-          let item = throws[c]
-          if (item.checked) {
-            addItem(this.$data.filteredThrows, item)
-          } else {
-            removeItem(this.$data.filteredThrows, item)
-          }
-        }
-
-        let bats = document.querySelectorAll('.bats-filter')
-        for (let c = 0; c < bats.length; c++) {
-          let item = bats[c]
-          if (item.checked) {
-            addItem(this.$data.filteredBats, item)
-          } else {
-            removeItem(this.$data.filteredBats, item)
-          }
-        }
-
-        let pos = document.querySelectorAll('.position-filter')
-        for (let c = 0; c < pos.length; c++) {
-          let item = pos[c]
-          if (item.checked) {
-            addItem(this.$data.filteredPosition, item)
-          } else {
-            removeItem(this.$data.filteredPosition, item)
-          }
-        }
-
-        this.getPlayers()
       }
     }
   }
@@ -429,19 +402,6 @@
     let items = document.querySelectorAll('.' + name)
     for (let i = 0; i < items.length; i++) {
       items[i].classList.remove(name)
-    }
-  }
-
-  function removeItem (array, item) {
-    var index = array.indexOf(item.value)
-    if (index !== -1) {
-      array.splice(index, 1)
-    }
-  }
-
-  function addItem (array, item) {
-    if (array.indexOf(item.value) === -1) {
-      array.push(item.value)
     }
   }
 

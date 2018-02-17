@@ -8,24 +8,29 @@
       </div>
     </div>
     <div class="level-right">
-      <!--<div class="level-item">-->
-        <!--<span class="is-size-7">Sort By:</span>-->
-      <!--</div>-->
-      <!--<div class="level-item">-->
-        <!--<div class="select is-small">-->
-          <!--<select>-->
-            <!--<option value="Overall">Overall</option>-->
-            <!--<option value="Overall">Peak</option>-->
-            <!--<option value="Overall">Scouting</option>-->
-            <!--<option value="Overall">Health</option>-->
-            <!--<option value="Overall">Overall</option>-->
-          <!--</select>-->
-        <!--</div>-->
-      <!--</div>-->
+      <div class="level-item">
+        <div class="control">
+          <input id='prospectsInput' class='position-filter' type="checkbox" v-model="prospectChecked"> Prospects Only?
+        </div>
+      </div>
+      <div class="level-item" v-if='prospectChecked'>
+        <span class="is-size-7">Year:</span>
+      </div>
+      <div class="level-item" v-if='prospectChecked'>
+        <div class="select is-small">
+          <select>
+            <option value="All" selected>All</option>
+            <option value="2076">2076</option>
+            <option value="2077">2077</option>
+            <option value="2078">2078</option>
+          </select>
+        </div>
+      </div>
       <div class="level-item">
         <!--<i class="fa fa-bar-chart fa-2x" aria-hidden="true" v-on:click='toggle_modal'></i>-->
       </div>
     </div>
+
     <div class="modal">
       <div class="modal-background"></div>
       <div class="modal-content">
@@ -47,7 +52,9 @@
     name: 'player-subHeader',
     data () {
       return {
-        msg: 'Player Comparison'
+        msg: 'Player Comparison',
+        prospectChecked: '',
+        simYear: ''
       }
     },
     created () {
