@@ -379,7 +379,7 @@
         if (this.$data.simNumber !== '') {
           parsed.simNumber = this.$data.simNumber
         }
-        if (this.$data.simYear !== 'All') {
+        if (this.$data.simYear !== 'All' && this.$data.simYear !== '') {
           parsed.simYear = this.$data.simYear
         }
         if (this.$data.filteredAges.length > 0) {
