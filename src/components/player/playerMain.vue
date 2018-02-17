@@ -290,21 +290,23 @@
         sort: 'overall',
         limit: '10000',
         players: [],
-        filteredAges: [],
+        prospectFilter: '',
+        simNumber: '',
+        simYear: '',
         filteredThrows: '',
         filteredBats: '',
         filteredPosition: [],
-        filteredYear: []
+        filteredAges: []
       }
     },
     created () {
+      this.$root.$on('prospectFilterChecked', this._updateProspectFilter)
+      this.$root.$on('simYearUpdated', this._updateSimYear)
+
       this.getPlayers()
     },
-    updated () {
-//      console.log('called updated')
-//      this.getPlayers()
+    computed: {
     },
-    computed: {},
     watch: {
       filteredBats: function () {
         this.getPlayers()
@@ -317,8 +319,13 @@
       },
       filteredPosition: function () {
         this.getPlayers()
+      },
+      simNumber: function () {
+        this.getPlayers()
+      },
+      simYear: function () {
+        this.getPlayers()
       }
-
     },
     methods: {
       getPlayers: function () {
@@ -337,6 +344,22 @@
           })
           .catch(error => console.error(error))
       },
+      _updateProspectFilter: function (value) {
+        if (value) {
+          console.log('setting sim number to draft')
+          this.$data.simNumber = 'draft'
+        } else {
+          this.$data.simNumber = ''
+        }
+      },
+      _updateSimYear: function (value) {
+        console.log('setting sim year')
+        if (value === 'All') {
+          this.$data.simYear = 'All'
+        } else {
+          this.$data.simYear = value
+        }
+      },
       _toggle_modal: function () {
         let obj = document.querySelector('.modal')
         if (obj.classList.contains('is-active')) {
@@ -347,14 +370,20 @@
       },
       _buildQueryString: function () {
         const parsed = queryString.parse(location.search)
-        if (this.$data.filteredAges.length > 0) {
-          parsed.age = _.map(this.$data.filteredAges).join(',')
-        }
         if (this.$data.filteredThrows !== '') {
           parsed.throws = this.$data.filteredThrows
         }
         if (this.$data.filteredBats !== '') {
           parsed.bats = this.$data.filteredBats
+        }
+        if (this.$data.simNumber !== '') {
+          parsed.simNumber = this.$data.simNumber
+        }
+        if (this.$data.simYear !== 'All') {
+          parsed.simYear = this.$data.simYear
+        }
+        if (this.$data.filteredAges.length > 0) {
+          parsed.age = _.map(this.$data.filteredAges).join(',')
         }
         if (this.$data.filteredPosition.length > 0) {
           parsed.position = _.map(this.$data.filteredPosition).join(',')

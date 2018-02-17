@@ -10,19 +10,19 @@
     <div class="level-right">
       <div class="level-item">
         <div class="control">
-          <input id='prospectsInput' class='position-filter' type="checkbox" v-model="prospectChecked"> Prospects Only?
+          <input id='prospectsInput' class='position-filter' type="checkbox" v-model="prospectFilterChecked"> Prospects Only?
         </div>
       </div>
-      <div class="level-item" v-if='prospectChecked'>
-        <span class="is-size-7">Year:</span>
+      <div class="level-item">
+        <span class="is-size-7">Sim Year:</span>
       </div>
-      <div class="level-item" v-if='prospectChecked'>
+      <div class="level-item">
         <div class="select is-small">
-          <select>
-            <option value="All" selected>All</option>
-            <option value="2076">2076</option>
-            <option value="2077">2077</option>
-            <option value="2078">2078</option>
+          <select v-model="simYearFilter">
+            <option>All</option>
+            <option>2076</option>
+            <option>2077</option>
+            <option>2078</option>
           </select>
         </div>
       </div>
@@ -53,13 +53,17 @@
     data () {
       return {
         msg: 'Player Comparison',
-        prospectChecked: '',
-        simYear: ''
+        prospectFilterChecked: false,
+        simYearFilter: 'All'
       }
     },
-    created () {
-    },
-    mounted () {
+    watch: {
+      prospectFilterChecked: function () {
+        this.$root.$emit('prospectFilterChecked', this.$data.prospectFilterChecked)
+      },
+      simYearFilter: function () {
+        this.$root.$emit('simYearUpdated', this.$data.simYearFilter)
+      }
     },
     methods: {
       toggle_modal: function () {
