@@ -56,6 +56,7 @@ tbody > tr {
 
 thead > tr {
   height: 42px;
+  width: 68px;
 }
 
 thead > tr > th {
@@ -111,6 +112,7 @@ td:not(.player) {
 
 table {
   margin-bottom: 10px;
+  height: inherit;
 }
 
 .title {
@@ -158,4 +160,32 @@ table {
 
 .display-none {
   display: none;
+}
+
+.table-wrapper {
+  clear: both;
+  height: 100%;
+  //overflow: auto;
+  width: 100%;
+}
+
+.fixedHeader {
+  display: table;
+  overflow: auto;
+  width: 100%
+}
+
+.scrollable {
+  display: block;
+  height: 100vh;
+  overflow: auto;
+  width: 100%
+}
+
+.small-spacing {
+  width: 50px;
+}
+
+.large-spacing {
+  width: 240px;
 }
