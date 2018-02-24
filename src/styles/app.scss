@@ -121,6 +121,10 @@ select {
   padding-left: 0px;
 }
 
+.display-none {
+  display: none;
+}
+
 // set derived variables
 @import "../../node_modules/bulma/bulma.sass";
 

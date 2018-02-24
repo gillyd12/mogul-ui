@@ -153,113 +153,90 @@
     </div>
     <div id="content">
       <div class="table-wrapper">
-        <table class="table is-striped is-fullwidth is-bordered">
-          <thead class="is-size-7 fixedHeader">
-          <tr>
-            <th class="large-spacing">PLAYER</th>
-            <th class="has-text-centered small-spacing">
-              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-              <div class="sorted-item" v-on:click='_toggle_sort'>OVR</div>
-              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-            </th>
-            <th class="has-text-centered small-spacing">
-              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-              <div class="sorted-item" v-on:click='_toggle_sort'>PCK</div>
-              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-            </th>
-            <th class="has-text-centered small-spacing">
-              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-              <div class="sorted-item" v-on:click='_toggle_sort'>CON</div>
-              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-            </th>
-            <th class="has-text-centered small-spacing">
-              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-              <div class="sorted-item" v-on:click='_toggle_sort'>POW</div>
-              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-            </th>
-            <th class="has-text-centered small-spacing">
-              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-              <div class="sorted-item" v-on:click='_toggle_sort'>EYE</div>
-              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-            </th>
-            <th class="has-text-centered small-spacing">
-              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-              <div class="sorted-item" v-on:click='_toggle_sort'>SPD</div>
-              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-            </th>
-            <th class="has-text-centered small-spacing">
-              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-              <div class="sorted-item" v-on:click='_toggle_sort'>ARM</div>
-              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-            </th>
-            <th class="has-text-centered small-spacing">
-              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-              <div class="sorted-item" v-on:click='_toggle_sort'>RNG</div>
-              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-            </th>
-            <th class="has-text-centered small-spacing">
-              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-              <div class="sorted-item" v-on:click='_toggle_sort'>FLD</div>
-              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-            </th>
-            <th class="has-text-centered small-spacing">
-              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-              <div class="sorted-item" v-on:click='_toggle_sort'>DEF</div>
-              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-            </th>
-            <th class="has-text-centered small-spacing">
-              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-              <div class="sorted-item" v-on:click='_toggle_sort'>HTH</div>
-              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-            </th>
-            <th class="has-text-centered small-spacing">
-              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-              <div class="sorted-item" v-on:click='_toggle_sort'>SCT</div>
-              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-            </th>
-          </tr>
-          </thead>
-          <transition name="fade">
-            <tbody class="scrollable" v-if="players.length > 0" key="players">
-            <tr tr v-for="player in players" class="player-data">
-              <td class="player is-size-7 large-spacing">
+        <div class="table">
+          <div class="thead">
+            <div class="tr">
+              <div class="th">PLAYER</div>
+              <div class="th" v-on:click='_toggle_sort'>
+                <div class="sorted-item">OVR</div>
+                <i class="fa fa-sort-up" aria-hidden="true"></i>
+              </div>
+              <div class="th" v-on:click='_toggle_sort'>
+                <div class="sorted-item">PCK</div>
+                <i class="fa fa-sort-down display-none" aria-hidden="true"></i>
+              </div>
+              <div class="th" v-on:click='_toggle_sort'>
+                <div class="sorted-item">CON</div>
+                <i class="fa fa-sort-down display-none" aria-hidden="true"></i>
+              </div>
+              <div class="th" v-on:click='_toggle_sort'>
+                <div class="sorted-item">POW</div>
+                <i class="fa fa-sort-down display-none" aria-hidden="true"></i>
+              </div>
+              <div class="th" v-on:click='_toggle_sort'>
+                <div class="sorted-item">EYE</div>
+                <i class="fa fa-sort-down display-none" aria-hidden="true"></i>
+              </div>
+              <div class="th" v-on:click='_toggle_sort'>
+                <div class="sorted-item">SPD</div>
+                <i class="fa fa-sort-down display-none" aria-hidden="true"></i>
+              </div>
+              <div class="th" v-on:click='_toggle_sort'>
+                <div class="sorted-item">ARM</div>
+                <i class="fa fa-sort-down display-none" aria-hidden="true"></i>
+              </div>
+              <div class="th" v-on:click='_toggle_sort'>
+                <div class="sorted-item">RNG</div>
+                <i class="fa fa-sort-down display-none" aria-hidden="true"></i>
+              </div>
+              <div class="th" v-on:click='_toggle_sort'>
+                <div class="sorted-item">FLD</div>
+                <i class="fa fa-sort-down display-none" aria-hidden="true"></i>
+              </div>
+              <div class="th" v-on:click='_toggle_sort'>
+                <div class="sorted-item">DEF</div>
+                <i class="fa fa-sort-down display-none" aria-hidden="true"></i>
+              </div>
+              <div class="th" v-on:click='_toggle_sort'>
+                <div class="sorted-item">HTH</div>
+                <i class="fa fa-sort-down display-none" aria-hidden="true"></i>
+              </div>
+              <div class="th" v-on:click='_toggle_sort'>
+                <div class="sorted-item">SCT</div>
+                <i class="fa fa-sort-down display-none" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+          <div class="tbody" v-if="players.length > 0" key="players">
+            <div class="tr player-data" v-for="player in players">
+              <div class="td player-data-column">
                 <span class="has-text-weight-bold is-size-7half">{{player.name}}</span>
-                <!--<i class="fa fa-heart-o" aria-hidden="true" v-on:click='_toggle_modal'></i>-->
-                <!--<i class="fa fa-plus" aria-hidden="true" v-on:click='_toggle_modal'></i>-->
-                <!--<i class="fa fa-vcard-o" aria-hidden="true" v-on:click='_toggle_modal'></i>-->
-                <div>
-                  <span>B/T: <span class="bats has-text-weight-bold">{{player.bats}}/{{player.throws}}</span></span>
-                  <span>Pos: <span class="pos has-text-weight-bold">{{player.position}}</span></span>
-                  <span>Age: <span class="age has-text-weight-bold">{{player.age}}</span></span>
-                </div>
-                <!--<div>-->
-                <!--<span>Yr. Drafted: <span class="has-text-weight-bold">{{player.profile.draft_year}}</span></span>-->
-                <!--<span>Birthday: <span class="has-text-weight-bold">{{player.birthday}}</span></span>-->
-                <!--</div>-->
-              </td>
-              <td class="ovr has-text-centered small-spacing">{{player.overall}}</td>
-              <td class="pck has-text-centered small-spacing">{{player.peak}}</td>
-              <td class="con has-text-centered small-spacing">{{player.contact}}</td>
-              <td class="pow has-text-centered small-spacing">{{player.o_power}}</td>
-              <td class="eye has-text-centered small-spacing">{{player.eye}}</td>
-              <td class="spd has-text-centered small-spacing">{{player.speed}}</td>
+                <!--<span>B/T: <span class="bats has-text-weight-bold">{{player.bats}}/{{player.throws}}</span></span>-->
+                <!--<span>Pos: <span class="pos has-text-weight-bold">{{player.position}}</span></span>-->
+                <!--<span>Age: <span class="age has-text-weight-bold">{{player.age}}</span></span>-->
+              </div>
+              <div class="td">{{player.overall}}</div>
+              <div class="td">{{player.peak}}</div>
+              <div class="td">{{player.contact}}</div>
+              <div class="td">{{player.o_power}}</div>
+              <div class="td">{{player.eye}}</div>
+              <div class="td">{{player.speed}}</div>
+              <div class="td">{{player.arm}}</div>
+              <div class="td">{{player.range}}</div>
+              <div class="td">{{player.fielding}}</div>
+              <div class="td">{{player.defense}}</div>
+              <div class="td">{{player.health}}</div>
+              <div class="td">{{player.scouting}}</div>
+            </div>
+          </div>
 
-              <td class="arm has-text-centered small-spacing">{{player.arm}}</td>
-              <td class="rng has-text-centered small-spacing">{{player.range}}</td>
-              <td class="fld has-text-centered small-spacing">{{player.fielding}}</td>
-              <td class="def has-text-centered small-spacing">{{player.defense}}</td>
-              <td class="hth has-text-centered small-spacing">{{player.health}}</td>
-              <td class="sct has-text-centered small-spacing">{{player.scouting}}</td>
-            </tr>
-            </tbody>
-          </transition>
-        </table>
-        <transition name="fade">
-          <content-placeholders class="content-placeholders" v-if='players.length === 0' key="playerLoader">
-            <!--<content-placeholders-heading :img="true"/>-->
-            <content-placeholders-text :lines="30"/>
-          </content-placeholders>
-        </transition>
+        </div>
+        <!--<transition name="fade">-->
+          <!--<content-placeholders class="content-placeholders" v-if='players.length === 0' key="playerLoader">-->
+            <!--&lt;!&ndash;<content-placeholders-heading :img="true"/>&ndash;&gt;-->
+            <!--<content-placeholders-text :lines="30"/>-->
+          <!--</content-placeholders>-->
+        <!--</transition>-->
       </div>
     </div>
 
@@ -305,8 +282,7 @@
 
       this.getPlayers()
     },
-    computed: {
-    },
+    computed: {},
     watch: {
       filteredBats: function () {
         this.getPlayers()
@@ -395,24 +371,28 @@
       },
       _toggle_sort: function (event) {
         let category = event.target.innerHTML.toLowerCase()
-        if (event.target.previousElementSibling.firstChild.classList.contains('fa-sort-up')) {
+        if (event.target.nextElementSibling.classList.contains('fa-sort-up')) {
           this.players.sort(function (a, b) {
             let obj = sortModel(a, b, category)
             return parseFloat(obj.prev) - parseFloat(obj.next)
           })
-          removeAllClasses('fa-sort-up')
-          removeAllClasses('fa-sort-down')
+//          removeAllClasses('fa-sort-up')
+//          removeAllClasses('fa-sort-down')
           removeAllClasses('sorted-cell')
-          event.target.nextElementSibling.firstChild.classList.add('fa-sort-down')
+          event.target.nextElementSibling.classList.add('fa-sort-down')
+          event.target.nextElementSibling.classList.remove('display-none')
+          event.target.nextElementSibling.classList.remove('fa-sort-up')
         } else {
           this.players.sort(function (a, b) {
             let obj = sortModel(a, b, category)
             return parseFloat(obj.next) - parseFloat(obj.prev)
           })
-          removeAllClasses('fa-sort-up')
-          removeAllClasses('fa-sort-down')
+//          removeAllClasses('fa-sort-up')
+//          removeAllClasses('fa-sort-down')
           removeAllClasses('sorted-cell')
-          event.target.previousElementSibling.firstChild.classList.add('fa-sort-up')
+          event.target.nextElementSibling.classList.add('fa-sort-up')
+          event.target.nextElementSibling.classList.remove('display-none')
+          event.target.nextElementSibling.classList.remove('fa-sort-down')
         }
         addClass(category)
         this.$data.sort = categoryToModelName(category)
