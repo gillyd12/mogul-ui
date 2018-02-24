@@ -154,9 +154,9 @@
     <div id="content">
       <div class="table-wrapper">
         <div class="table">
-          <div class="thead">
+          <div class="thead is-size-7 fixedHeader">
             <div class="tr">
-              <div class="th">PLAYER</div>
+              <div class="th player-only">PLAYER</div>
               <div class="th" v-on:click='_toggle_sort'>
                 <div class="sorted-item">OVR</div>
                 <i class="fa fa-sort-up" aria-hidden="true"></i>
@@ -207,9 +207,9 @@
               </div>
             </div>
           </div>
-          <div class="tbody" v-if="players.length > 0" key="players">
+          <div class="tbody scrollable" v-if="players.length > 0" key="players">
             <div class="tr player-data" v-for="player in players">
-              <div class="td player-data-column">
+              <div class="td player-only">
                 <span class="has-text-weight-bold is-size-7half">{{player.name}}</span>
                 <!--<span>B/T: <span class="bats has-text-weight-bold">{{player.bats}}/{{player.throws}}</span></span>-->
                 <!--<span>Pos: <span class="pos has-text-weight-bold">{{player.position}}</span></span>-->
@@ -377,7 +377,8 @@
             return parseFloat(obj.prev) - parseFloat(obj.next)
           })
 //          removeAllClasses('fa-sort-up')
-//          removeAllClasses('fa-sort-down')
+//          removeAllClasses('display-none')
+          addDisplayNoneToIcons()
           removeAllClasses('sorted-cell')
           event.target.nextElementSibling.classList.add('fa-sort-down')
           event.target.nextElementSibling.classList.remove('display-none')
@@ -389,6 +390,8 @@
           })
 //          removeAllClasses('fa-sort-up')
 //          removeAllClasses('fa-sort-down')
+//          removeAllClasses('display-none')
+          addDisplayNoneToIcons()
           removeAllClasses('sorted-cell')
           event.target.nextElementSibling.classList.add('fa-sort-up')
           event.target.nextElementSibling.classList.remove('display-none')
@@ -406,6 +409,14 @@
       items[i].classList.add('sorted-cell')
     }
   }
+
+  function addDisplayNoneToIcons () {
+    let items = document.querySelectorAll('i')
+    for (let i = 0; i < items.length; i++) {
+      items[i].classList.add('display-none')
+    }
+  }
+
 
   function removeAllClasses (name) {
     let items = document.querySelectorAll('.' + name)

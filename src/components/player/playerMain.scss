@@ -71,26 +71,6 @@ $table-cell-heading-color: $deep-black;
   }
 }
 
-.table-wrapper {
-  clear: both;
-  height: 100%;
-  //overflow: auto;
-  width: 100%;
-}
-
-.fixedHeader {
-  display: table;
-  overflow: auto;
-  width: 100%
-}
-
-.scrollable {
-  display: block;
-  height: 100vh;
-  overflow: auto;
-  width: 100%
-}
-
 // table overrides
 
 .table {
@@ -123,12 +103,10 @@ $table-cell-heading-color: $deep-black;
   vertical-align: middle;
 }
 
-.tr > div {
-  width: 6%;
-}
-
-.tr :first-child {
-  width: 14%;
+.player-only {
+  min-width: 200px !important;
+  width: 200px !important;
+  max-width: 200px !important;
 }
 
 .tr {
@@ -139,6 +117,15 @@ $table-cell-heading-color: $deep-black;
   color: $lilly-white;
   position: relative;
   height: 42px;
+  min-width: 6%;
+  width: 6%;
+  max-width: 6%;
+}
+
+.td {
+  min-width: 6%;
+  width: 6%;
+  max-width: 6%;
 }
 
 i:hover {
@@ -169,4 +156,23 @@ i:hover {
 
 .sorted-item {
   width: 100% !important;
+}
+
+.table-wrapper {
+  clear: both;
+  height: 100%;
+  //overflow: auto;
+  width: 100%;
+}
+
+.fixedHeader {
+  display: table;
+  width: 100%
+}
+
+.scrollable {
+  display: block;
+  height: 100vh;
+  overflow: auto;
+  width: 100%
 }
