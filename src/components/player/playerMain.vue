@@ -154,9 +154,9 @@
     <div id="content">
       <div class="table-wrapper">
         <div class="tHeadContainer is-size-7 fixedHeader">
-          <table id="tHead">
+          <table id="tHead is-size-7 table is-striped is-fullwidth is-bordered">
             <tr>
-              <th class="large-spacing">PLAYER</th>
+              <th class="large-spacing player-column">PLAYER</th>
               <th class="has-text-centered small-spacing">
                 <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
                 <div class="sorted-item" v-on:click='_toggle_sort'>OVR</div>
@@ -220,10 +220,10 @@
             </tr>
           </table>
         </div>
-        <div class="tBodyContainer scrollable">
-          <transition name="fade">
-            <table id="tBody" v-if="players.length > 0" key="players">
-              <tr tr v-for="player in players" class="player-data">
+        <transition name="fade">
+          <div class="tBodyContainer scrollable">
+            <table class="table is-striped is-fullwidth is-bordered" v-if="players.length > 0" key="players">
+              <tr v-for="player in players" class="player-data">
                 <td class="player is-size-7 large-spacing">
                   <span class="has-text-weight-bold is-size-7half">{{player.name}}</span>
                   <!--<i class="fa fa-heart-o" aria-hidden="true" v-on:click='_toggle_modal'></i>-->
@@ -252,11 +252,24 @@
                 <td class="hth has-text-centered small-spacing">{{player.health}}</td>
                 <td class="sct has-text-centered small-spacing">{{player.scouting}}</td>
               </tr>
+              <tr class="empty">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
             </table>
-          </transition>
-        </div>
-        <!--<table class="table is-striped is-fullwidth is-bordered">-->
-        <!--</table>-->
+          </div>
+        </transition>
         <transition name="fade">
           <content-placeholders class="content-placeholders" v-if='players.length === 0' key="playerLoader">
             <!--<content-placeholders-heading :img="true"/>-->
@@ -390,8 +403,8 @@
         if (this.$data.filteredPosition.length > 0) {
           parsed.position = _.map(this.$data.filteredPosition).join(',')
         }
-//        parsed.limit = this.$data.limit
-        parsed.limit = 30
+        parsed.limit = this.$data.limit
+//        parsed.limit = 30
         parsed.sort = this.$data.sort
 
         return queryString.stringify(parsed)
