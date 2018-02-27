@@ -1,6 +1,7 @@
 @import "../../styles/variables.scss";
 
 $table-cell-heading-color: $deep-black;
+$rowHeight: 42px;
 
 #player {
   display: grid;
@@ -46,14 +47,15 @@ table tr td:last-child {
 td {
   border-top: 0;
   border-bottom: 0;
+  height: $rowHeight
 }
 
-tbody > tr {
-  height: 42px;
+.tbody > tr {
+  height: $rowHeight
 }
 
 .thead > tr {
-  height: 42px;
+  height: $rowHeight;
   width: 100%;
 }
 
@@ -69,17 +71,14 @@ i:hover {
 
 td:not(.player) {
   font-size: 1.25rem;
-  vertical-align: middle;
 }
 
 .fa-sort-up {
   vertical-align: bottom;
-  //color: $deep-black;
 }
 
 .fa-sort-down {
   vertical-align: top;
-  //color: $deep-black;
 }
 
 .table.is-bordered td, .table.is-bordered th {
@@ -98,14 +97,14 @@ td:not(.player) {
 table {
   margin-bottom: 10px;
   table-layout: fixed;
-  height: 100%;
   width: 100%;
+  background-color: $dirty-white;
 
-  td {
-    vertical-align: middle;
-  }
   th {
     vertical-align: middle;
+  }
+  tr {
+    height: 42px;
   }
 }
 
@@ -167,16 +166,16 @@ table {
 
 .fixedHeader {
   width: 100%;
-  height: 42px;
-  padding-right: 17px;
+  height: $rowHeight;
   background-color: $deep-black;
 }
 
 .scrollable {
-  display: block;
+  display: grid;
   height: 100%;
-  overflow: auto;
-  width: fit-content;
+  overflow: overlay;
+  background-color: $dirty-white
+  //width: fit-content;
 }
 
 .small-spacing {

@@ -220,62 +220,64 @@
             </tr>
           </table>
         </div>
-        <transition name="fade">
-          <div class="tBodyContainer scrollable">
+        <div class="tBodyContainer scrollable">
+          <transition name="fade">
             <table class="table is-striped is-fullwidth is-bordered" v-if="players.length > 0" key="players">
-              <tr v-for="player in players" class="player-data">
-                <td class="player is-size-7 large-spacing">
-                  <span class="has-text-weight-bold is-size-7half">{{player.name}}</span>
-                  <!--<i class="fa fa-heart-o" aria-hidden="true" v-on:click='_toggle_modal'></i>-->
-                  <!--<i class="fa fa-plus" aria-hidden="true" v-on:click='_toggle_modal'></i>-->
-                  <!--<i class="fa fa-vcard-o" aria-hidden="true" v-on:click='_toggle_modal'></i>-->
-                  <div>
-                    <span>B/T: <span class="bats has-text-weight-bold">{{player.bats}}/{{player.throws}}</span></span>
-                    <span>Pos: <span class="pos has-text-weight-bold">{{player.position}}</span></span>
-                    <span>Age: <span class="age has-text-weight-bold">{{player.age}}</span></span>
-                  </div>
-                  <!--<div>-->
-                  <!--<span>Yr. Drafted: <span class="has-text-weight-bold">{{player.profile.draft_year}}</span></span>-->
-                  <!--<span>Birthday: <span class="has-text-weight-bold">{{player.birthday}}</span></span>-->
-                  <!--</div>-->
-                </td>
-                <td class="ovr has-text-centered small-spacing">{{player.overall}}</td>
-                <td class="pck has-text-centered small-spacing">{{player.peak}}</td>
-                <td class="con has-text-centered small-spacing">{{player.contact}}</td>
-                <td class="pow has-text-centered small-spacing">{{player.o_power}}</td>
-                <td class="eye has-text-centered small-spacing">{{player.eye}}</td>
-                <td class="spd has-text-centered small-spacing">{{player.speed}}</td>
-                <td class="arm has-text-centered small-spacing">{{player.arm}}</td>
-                <td class="rng has-text-centered small-spacing">{{player.range}}</td>
-                <td class="fld has-text-centered small-spacing">{{player.fielding}}</td>
-                <td class="def has-text-centered small-spacing">{{player.defense}}</td>
-                <td class="hth has-text-centered small-spacing">{{player.health}}</td>
-                <td class="sct has-text-centered small-spacing">{{player.scouting}}</td>
-              </tr>
-              <tr class="empty">
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
+              <tbody>
+                <tr v-for="player in players" class="player-data">
+                  <td class="player is-size-7 large-spacing">
+                    <span class="has-text-weight-bold is-size-7half">{{player.name}}</span>
+                    <!--<i class="fa fa-heart-o" aria-hidden="true" v-on:click='_toggle_modal'></i>-->
+                    <!--<i class="fa fa-plus" aria-hidden="true" v-on:click='_toggle_modal'></i>-->
+                    <!--<i class="fa fa-vcard-o" aria-hidden="true" v-on:click='_toggle_modal'></i>-->
+                    <div>
+                      <span>B/T: <span class="bats has-text-weight-bold">{{player.bats}}/{{player.throws}}</span></span>
+                      <span>Pos: <span class="pos has-text-weight-bold">{{player.position}}</span></span>
+                      <span>Age: <span class="age has-text-weight-bold">{{player.age}}</span></span>
+                    </div>
+                    <!--<div>-->
+                    <!--<span>Yr. Drafted: <span class="has-text-weight-bold">{{player.profile.draft_year}}</span></span>-->
+                    <!--<span>Birthday: <span class="has-text-weight-bold">{{player.birthday}}</span></span>-->
+                    <!--</div>-->
+                  </td>
+                  <td class="ovr has-text-centered small-spacing">{{player.overall}}</td>
+                  <td class="pck has-text-centered small-spacing">{{player.peak}}</td>
+                  <td class="con has-text-centered small-spacing">{{player.contact}}</td>
+                  <td class="pow has-text-centered small-spacing">{{player.o_power}}</td>
+                  <td class="eye has-text-centered small-spacing">{{player.eye}}</td>
+                  <td class="spd has-text-centered small-spacing">{{player.speed}}</td>
+                  <td class="arm has-text-centered small-spacing">{{player.arm}}</td>
+                  <td class="rng has-text-centered small-spacing">{{player.range}}</td>
+                  <td class="fld has-text-centered small-spacing">{{player.fielding}}</td>
+                  <td class="def has-text-centered small-spacing">{{player.defense}}</td>
+                  <td class="hth has-text-centered small-spacing">{{player.health}}</td>
+                  <td class="sct has-text-centered small-spacing">{{player.scouting}}</td>
+                </tr>
+                <tr class="empty">
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
             </table>
-          </div>
-        </transition>
-        <transition name="fade">
-          <content-placeholders class="content-placeholders" v-if='players.length === 0' key="playerLoader">
-            <!--<content-placeholders-heading :img="true"/>-->
-            <content-placeholders-text :lines="30"/>
-          </content-placeholders>
-        </transition>
+          </transition>
+          <transition name="fade">
+            <content-placeholders class="content-placeholders" v-if='players.length === 0' key="playerLoader">
+              <!--<content-placeholders-heading :img="true"/>-->
+              <content-placeholders-text :lines="30"/>
+            </content-placeholders>
+          </transition>
+        </div>
       </div>
     </div>
 
