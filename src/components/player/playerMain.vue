@@ -86,32 +86,27 @@
       <div class="matches">
         <h6 class="title is-6">Bats</h6>
         <div class="control">
-          <label class="radio">
-            <input class='bats-filter' type="radio" name="bats" v-model="filteredBats" value="L">
-            L
-          </label>
-          <label class="radio">
-            <input class='bats-filter' type="radio" name="bats" v-model="filteredBats" value="R">
-            R
-          </label>
-          <label class="radio">
-            <input class='bats-filter' type="radio" name="bats" v-model="filteredBats" value="S">
-            S
-          </label>
+          <div class="select is-small">
+            <select v-model="filteredBats">
+              <option></option>
+              <option value="S">Switch</option>
+              <option value="R">Right</option>
+              <option value="L">Left</option>
+            </select>
+          </div>
         </div>
       </div>
 
       <div class="matches">
         <h6 class="title is-6">Throws</h6>
         <div class="control">
-          <label class="radio">
-            <input class='throws-filter' type="radio" name="throws" v-model="filteredThrows" value="L">
-            L
-          </label>
-          <label class="radio">
-            <input class='throws-filter' type="radio" name="throws" v-model="filteredThrows" value="R">
-            R
-          </label>
+          <div class="select is-small">
+            <select v-model="filteredThrows">
+              <option></option>
+              <option value="R">Right</option>
+              <option value="L">Left</option>
+            </select>
+          </div>
         </div>
       </div>
       <div class="matches">
