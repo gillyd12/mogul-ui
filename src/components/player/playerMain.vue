@@ -313,10 +313,11 @@
       }
     },
     created () {
+//      this.getPlayers()
+    },
+    mounted () {
       this.$root.$on('prospectFilterChecked', this._updateProspectFilter)
       this.$root.$on('simYearUpdated', this._updateSimYear)
-
-      this.getPlayers()
     },
     computed: {},
     watch: {
@@ -358,16 +359,14 @@
       },
       _updateProspectFilter: function (value) {
         if (value) {
-          console.log('setting sim number to draft')
           this.$data.simNumber = 'draft'
         } else {
           this.$data.simNumber = ''
         }
       },
       _updateSimYear: function (value) {
-        console.log('setting sim year')
         if (value === 'All') {
-          this.$data.simYear = 'All'
+          this.$data.simYear = ''
         } else {
           this.$data.simYear = value
         }

@@ -7,7 +7,7 @@ $rowHeight: 42px;
   display: grid;
   grid-template-columns: 224px auto;
   grid-auto-rows: minmax(48px, 100vh);
-  height: 100vh;
+  height: calc(100vh - 152px);
   grid-template-areas:
     "filter main";
 }

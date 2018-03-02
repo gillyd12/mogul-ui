@@ -45,7 +45,10 @@
         fetch(url)
           .then(stream => stream.json())
           // eslint-disable-next-line
-          .then(data => this.details = data)
+          .then(data => {
+            this.details = data
+            this.$root.$emit('simDetails', this.details)
+          })
           .catch(error => console.error(error))
       }
     }

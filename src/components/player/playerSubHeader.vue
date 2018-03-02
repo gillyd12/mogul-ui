@@ -19,10 +19,9 @@
       <div class="level-item">
         <div class="select is-small">
           <select v-model="simYearFilter">
-            <option>All</option>
-            <option>2076</option>
-            <option>2077</option>
             <option>2078</option>
+            <option>2077</option>
+            <option>2076</option>
           </select>
         </div>
       </div>
@@ -54,7 +53,8 @@
       return {
         msg: 'Player Comparison',
         prospectFilterChecked: false,
-        simYearFilter: 'All'
+        simYearFilter: '',
+        simNumberFilter: ''
       }
     },
     watch: {
@@ -75,9 +75,18 @@
         } else {
           obj.classList.add('is-active')
         }
+      },
+      _simulationDetailsLoad: function (value) {
+        if (value) {
+          this.$data.simNumberFilter = value[0].simNumber
+          this.$data.simYearFilter = value[0].simYear
+        }
       }
     },
-    computed: {}
+    computed: {},
+    mounted () {
+      this.$root.$on('simDetails', this._simulationDetailsLoad)
+    }
   }
 </script>
 
