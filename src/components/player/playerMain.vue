@@ -41,45 +41,47 @@
 
       <div class="matches">
         <h6 class="title is-6">Position</h6>
-        <div class="control">
-          <label class="checkbox">
-            <input class='position-filter' type="checkbox" v-model="filteredPosition" value="1B"> 1B
-          </label>
-          <label class="checkbox">
-            <input class='position-filter' type="checkbox" v-model="filteredPosition" value="LF"> LF
-          </label>
-          <label class="checkbox">
-            <input class='position-filter' type="checkbox" v-model="filteredPosition" value="SP"> SP
-          </label>
-        </div>
-        <div class="control">
-          <label class="checkbox">
-            <input class='position-filter' type="checkbox" v-model="filteredPosition" value="2B"> 2B
-          </label>
-          <label class="checkbox">
-            <input class='position-filter' type="checkbox" v-model="filteredPosition" value="CF"> CF
-          </label>
-          <label class="checkbox">
-            <input class='position-filter' type="checkbox" v-model="filteredPosition" value="RP"> RP
-          </label>
-        </div>
-        <div class="control">
-          <label class="checkbox">
-            <input class='position-filter' type="checkbox" v-model="filteredPosition" value="3B"> 3B
-          </label>
-          <label class="checkbox">
-            <input class='position-filter' type="checkbox" v-model="filteredPosition" value="RF"> RF
-          </label>
-        </div>
-        <div class="control">
-          <label class="checkbox">
-            <input class='position-filter' type="checkbox" v-model="filteredPosition" value="SS"> SS
-          </label>
-        </div>
-        <div class="control">
-          <label class="checkbox">
-            <input class='position-filter' type="checkbox" v-model="filteredPosition" value="C"> C
-          </label>
+        <div class="position">
+          <div class="offense">
+            <h6 class="is-size-7half">Offense</h6>
+            <div class="control">
+              <label class="checkbox">
+                <input class='position-filter' type="checkbox" v-model="filteredPosition" value="1B"> 1B
+              </label>
+              <label class="checkbox">
+                <input class='position-filter' type="checkbox" v-model="filteredPosition" value="LF"> LF
+              </label>
+              <label class="checkbox">
+                <input class='position-filter' type="checkbox" v-model="filteredPosition" value="2B"> 2B
+              </label>
+              <label class="checkbox">
+                <input class='position-filter' type="checkbox" v-model="filteredPosition" value="CF"> CF
+              </label>
+              <label class="checkbox">
+                <input class='position-filter' type="checkbox" v-model="filteredPosition" value="3B"> 3B
+              </label>
+              <label class="checkbox">
+                <input class='position-filter' type="checkbox" v-model="filteredPosition" value="RF"> RF
+              </label>
+              <label class="checkbox">
+                <input class='position-filter' type="checkbox" v-model="filteredPosition" value="SS"> SS
+              </label>
+              <label class="checkbox">
+                <input class='position-filter' type="checkbox" v-model="filteredPosition" value="C"> C
+              </label>
+            </div>
+          </div>
+          <div class="pitching">
+            <h6 class="is-size-7half">Pitching</h6>
+            <div class="control">
+              <label class="checkbox">
+                <input class='position-filter' type="checkbox" v-model="filteredPosition" value="SP"> SP
+              </label>
+              <label class="checkbox">
+                <input class='position-filter' type="checkbox" v-model="filteredPosition" value="RP"> RP
+              </label>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -147,7 +149,365 @@
       </div>
     </div>
     <div id="content">
-      <div class="table-wrapper">
+      <div id='all-players' class="table-wrapper">
+        <div class="tHeadContainer is-size-7 fixedHeader">
+          <table class="tHead is-size-7 table is-striped is-fullwidth is-bordered">
+            <tr>
+              <th class="large-spacing player-column">Player</th>
+              <th class="has-text-centered small-spacing">
+                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+                <div class="sorted-item" v-on:click='_toggle_sort'>Overall</div>
+                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+              </th>
+              <th class="has-text-centered small-spacing">
+                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+                <div class="sorted-item" v-on:click='_toggle_sort'>Peak</div>
+                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+              </th>
+              <!--<th class="has-text-centered small-spacing">-->
+                <!--<div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>-->
+                <!--<div class="sorted-item" v-on:click='_toggle_sort'>CON</div>-->
+                <!--<div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>-->
+              <!--</th>-->
+              <!--<th class="has-text-centered small-spacing">-->
+                <!--<div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>-->
+                <!--<div class="sorted-item" v-on:click='_toggle_sort'>POW</div>-->
+                <!--<div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>-->
+              <!--</th>-->
+              <th class="has-text-centered small-spacing">
+                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+                <div class="sorted-item" v-on:click='_toggle_sort'>CONRACT YEARS</div>
+                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+              </th>
+              <th class="has-text-centered small-spacing">
+                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+                <div class="sorted-item" v-on:click='_toggle_sort'>SALARY</div>
+                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+              </th>
+              <th class="has-text-centered small-spacing">
+                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+                <div class="sorted-item" v-on:click='_toggle_sort'>HAPPINESS</div>
+                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+              </th>
+              <th class="has-text-centered small-spacing">
+                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+                <div class="sorted-item" v-on:click='_toggle_sort'>INJURY</div>
+                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+              </th>
+              <th class="has-text-centered small-spacing">
+                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+                <div class="sorted-item" v-on:click='_toggle_sort'>ROSTER</div>
+                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+              </th>
+              <th class="has-text-centered small-spacing">
+                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+                <div class="sorted-item" v-on:click='_toggle_sort'>MLB SERVICE</div>
+                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+              </th>
+              <th class="has-text-centered small-spacing">
+                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+                <div class="sorted-item" v-on:click='_toggle_sort'>HTH</div>
+                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+              </th>
+              <th class="has-text-centered small-spacing">
+                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+                <div class="sorted-item" v-on:click='_toggle_sort'>SCT</div>
+                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+              </th>
+            </tr>
+          </table>
+        </div>
+        <div class="tBodyContainer scrollable">
+          <transition name="fade">
+            <div id='offensive-player-categories' v-if="_onlyOffensivePositionsSelected">
+              <table class="table is-striped is-fullwidth is-bordered" v-if="players.length > 0" key="players">
+                <tbody>
+                  <tr v-for="player in players" class="player-data">
+                    <td class="player is-size-7 large-spacing">
+                      <span class="has-text-weight-bold is-size-7half">{{player.name}}</span>
+                      <!--<i class="fa fa-heart-o" aria-hidden="true" v-on:click='_toggle_modal'></i>-->
+                      <!--<i class="fa fa-plus" aria-hidden="true" v-on:click='_toggle_modal'></i>-->
+                      <!--<i class="fa fa-vcard-o" aria-hidden="true" v-on:click='_toggle_modal'></i>-->
+                      <div>
+                        <span>B/T: <span class="bats has-text-weight-bold">{{player.bats}}/{{player.throws}}</span></span>
+                        <span>Pos: <span class="pos has-text-weight-bold">{{player.position}}</span></span>
+                        <span>Age: <span class="age has-text-weight-bold">{{player.age}}</span></span>
+                      </div>
+                      <!--<div>-->
+                      <!--<span>Yr. Drafted: <span class="has-text-weight-bold">{{player.profile.draft_year}}</span></span>-->
+                      <!--<span>Birthday: <span class="has-text-weight-bold">{{player.birthday}}</span></span>-->
+                      <!--</div>-->
+                    </td>
+                    <td class="ovr has-text-centered small-spacing">{{player.overall}}</td>
+                    <td class="pck has-text-centered small-spacing">{{player.peak}}</td>
+                    <td class="con has-text-centered small-spacing">{{player.contact}}</td>
+                    <td class="pow has-text-centered small-spacing">{{player.o_power}}</td>
+                    <td class="eye has-text-centered small-spacing">{{player.eye}}</td>
+                    <td class="spd has-text-centered small-spacing">{{player.speed}}</td>
+                    <td class="arm has-text-centered small-spacing">{{player.arm}}</td>
+                    <td class="rng has-text-centered small-spacing">{{player.range}}</td>
+                    <td class="fld has-text-centered small-spacing">{{player.fielding}}</td>
+                    <td class="def has-text-centered small-spacing">{{player.defense}}</td>
+                    <td class="hth has-text-centered small-spacing">{{player.health}}</td>
+                    <td class="sct has-text-centered small-spacing">{{player.scouting}}</td>
+                  </tr>
+                  <tr class="empty">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id='pitching-player-categories' v-else>
+              <table class="table is-striped is-fullwidth is-bordered" v-if="players.length > 0" key="players">
+              <tbody>
+                <tr v-for="player in players" class="player-data" hidden>
+                  <td class="player is-size-7 large-spacing">
+                    <span class="has-text-weight-bold is-size-7half">{{player.name}}</span>
+                    <!--<i class="fa fa-heart-o" aria-hidden="true" v-on:click='_toggle_modal'></i>-->
+                    <!--<i class="fa fa-plus" aria-hidden="true" v-on:click='_toggle_modal'></i>-->
+                    <!--<i class="fa fa-vcard-o" aria-hidden="true" v-on:click='_toggle_modal'></i>-->
+                    <div>
+                      <span>B/T: <span class="bats has-text-weight-bold">{{player.bats}}/{{player.throws}}</span></span>
+                      <span>Pos: <span class="pos has-text-weight-bold">{{player.position}}</span></span>
+                      <span>Age: <span class="age has-text-weight-bold">{{player.age}}</span></span>
+                    </div>
+                    <!--<div>-->
+                    <!--<span>Yr. Drafted: <span class="has-text-weight-bold">{{player.profile.draft_year}}</span></span>-->
+                    <!--<span>Birthday: <span class="has-text-weight-bold">{{player.birthday}}</span></span>-->
+                    <!--</div>-->
+                  </td>
+                  <td class="ovr has-text-centered small-spacing">{{player.overall}}</td>
+                  <td class="pck has-text-centered small-spacing">{{player.peak}}</td>
+                  <td class="end has-text-centered small-spacing">{{player.endurance}}</td>
+                  <td class="con has-text-centered small-spacing">{{player.control}}</td>
+                  <td class="pow has-text-centered small-spacing">{{player.p_power}}</td>
+                  <td class="mov has-text-centered small-spacing">{{player.movement}}</td>
+                  <td class="mph has-text-centered small-spacing">{{player.mph}}</td>
+                  <td class="ph1 has-text-centered small-spacing">{{player.pitch_1}}</td>
+                  <td class="ph2 has-text-centered small-spacing">{{player.pitch_2}}</td>
+                  <td class="ph3 has-text-centered small-spacing">{{player.pitch_3}}</td>
+                  <td class="hth has-text-centered small-spacing">{{player.health}}</td>
+                  <td class="sct has-text-centered small-spacing">{{player.scouting}}</td>
+                </tr>
+                <tr class="empty">
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+          </transition>
+          <transition name="fade">
+            <content-placeholders class="content-placeholders" v-if='players.length === 0' key="playerLoader">
+              <!--<content-placeholders-heading :img="true"/>-->
+              <content-placeholders-text :lines="30"/>
+            </content-placeholders>
+          </transition>
+        </div>
+      </div>
+      <div id='offensive-players' class="table-wrapper">
+        <div class="tHeadContainer is-size-7 fixedHeader">
+          <table class="tHead is-size-7 table is-striped is-fullwidth is-bordered">
+            <tr>
+              <th class="large-spacing player-column">PLAYER</th>
+              <th class="has-text-centered small-spacing">
+                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+                <div class="sorted-item" v-on:click='_toggle_sort'>OVR</div>
+                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+              </th>
+              <th class="has-text-centered small-spacing">
+                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+                <div class="sorted-item" v-on:click='_toggle_sort'>PCK</div>
+                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+              </th>
+              <th class="has-text-centered small-spacing">
+                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+                <div class="sorted-item" v-on:click='_toggle_sort'>CON</div>
+                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+              </th>
+              <th class="has-text-centered small-spacing">
+                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+                <div class="sorted-item" v-on:click='_toggle_sort'>POW</div>
+                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+              </th>
+              <th class="has-text-centered small-spacing">
+                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+                <div class="sorted-item" v-on:click='_toggle_sort'>EYE</div>
+                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+              </th>
+              <th class="has-text-centered small-spacing">
+                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+                <div class="sorted-item" v-on:click='_toggle_sort'>SPD</div>
+                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+              </th>
+              <th class="has-text-centered small-spacing">
+                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+                <div class="sorted-item" v-on:click='_toggle_sort'>ARM</div>
+                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+              </th>
+              <th class="has-text-centered small-spacing">
+                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+                <div class="sorted-item" v-on:click='_toggle_sort'>RNG</div>
+                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+              </th>
+              <th class="has-text-centered small-spacing">
+                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+                <div class="sorted-item" v-on:click='_toggle_sort'>FLD</div>
+                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+              </th>
+              <th class="has-text-centered small-spacing">
+                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+                <div class="sorted-item" v-on:click='_toggle_sort'>DEF</div>
+                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+              </th>
+              <th class="has-text-centered small-spacing">
+                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+                <div class="sorted-item" v-on:click='_toggle_sort'>HTH</div>
+                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+              </th>
+              <th class="has-text-centered small-spacing">
+                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+                <div class="sorted-item" v-on:click='_toggle_sort'>SCT</div>
+                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+              </th>
+            </tr>
+          </table>
+        </div>
+        <div class="tBodyContainer scrollable">
+          <transition name="fade">
+            <div id='offensive-player-categories' v-if="_onlyOffensivePositionsSelected">
+              <table class="table is-striped is-fullwidth is-bordered" v-if="players.length > 0" key="players">
+                <tbody>
+                <tr v-for="player in players" class="player-data">
+                  <td class="player is-size-7 large-spacing">
+                    <span class="has-text-weight-bold is-size-7half">{{player.name}}</span>
+                    <!--<i class="fa fa-heart-o" aria-hidden="true" v-on:click='_toggle_modal'></i>-->
+                    <!--<i class="fa fa-plus" aria-hidden="true" v-on:click='_toggle_modal'></i>-->
+                    <!--<i class="fa fa-vcard-o" aria-hidden="true" v-on:click='_toggle_modal'></i>-->
+                    <div>
+                      <span>B/T: <span class="bats has-text-weight-bold">{{player.bats}}/{{player.throws}}</span></span>
+                      <span>Pos: <span class="pos has-text-weight-bold">{{player.position}}</span></span>
+                      <span>Age: <span class="age has-text-weight-bold">{{player.age}}</span></span>
+                    </div>
+                    <!--<div>-->
+                    <!--<span>Yr. Drafted: <span class="has-text-weight-bold">{{player.profile.draft_year}}</span></span>-->
+                    <!--<span>Birthday: <span class="has-text-weight-bold">{{player.birthday}}</span></span>-->
+                    <!--</div>-->
+                  </td>
+                  <td class="ovr has-text-centered small-spacing">{{player.overall}}</td>
+                  <td class="pck has-text-centered small-spacing">{{player.peak}}</td>
+                  <td class="con has-text-centered small-spacing">{{player.contact}}</td>
+                  <td class="pow has-text-centered small-spacing">{{player.o_power}}</td>
+                  <td class="eye has-text-centered small-spacing">{{player.eye}}</td>
+                  <td class="spd has-text-centered small-spacing">{{player.speed}}</td>
+                  <td class="arm has-text-centered small-spacing">{{player.arm}}</td>
+                  <td class="rng has-text-centered small-spacing">{{player.range}}</td>
+                  <td class="fld has-text-centered small-spacing">{{player.fielding}}</td>
+                  <td class="def has-text-centered small-spacing">{{player.defense}}</td>
+                  <td class="hth has-text-centered small-spacing">{{player.health}}</td>
+                  <td class="sct has-text-centered small-spacing">{{player.scouting}}</td>
+                </tr>
+                <tr class="empty">
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id='pitching-player-categories' v-else>
+              <table class="table is-striped is-fullwidth is-bordered" v-if="players.length > 0" key="players">
+                <tbody>
+                <tr v-for="player in players" class="player-data" hidden>
+                  <td class="player is-size-7 large-spacing">
+                    <span class="has-text-weight-bold is-size-7half">{{player.name}}</span>
+                    <!--<i class="fa fa-heart-o" aria-hidden="true" v-on:click='_toggle_modal'></i>-->
+                    <!--<i class="fa fa-plus" aria-hidden="true" v-on:click='_toggle_modal'></i>-->
+                    <!--<i class="fa fa-vcard-o" aria-hidden="true" v-on:click='_toggle_modal'></i>-->
+                    <div>
+                      <span>B/T: <span class="bats has-text-weight-bold">{{player.bats}}/{{player.throws}}</span></span>
+                      <span>Pos: <span class="pos has-text-weight-bold">{{player.position}}</span></span>
+                      <span>Age: <span class="age has-text-weight-bold">{{player.age}}</span></span>
+                    </div>
+                    <!--<div>-->
+                    <!--<span>Yr. Drafted: <span class="has-text-weight-bold">{{player.profile.draft_year}}</span></span>-->
+                    <!--<span>Birthday: <span class="has-text-weight-bold">{{player.birthday}}</span></span>-->
+                    <!--</div>-->
+                  </td>
+                  <td class="ovr has-text-centered small-spacing">{{player.overall}}</td>
+                  <td class="pck has-text-centered small-spacing">{{player.peak}}</td>
+                  <td class="end has-text-centered small-spacing">{{player.endurance}}</td>
+                  <td class="con has-text-centered small-spacing">{{player.control}}</td>
+                  <td class="pow has-text-centered small-spacing">{{player.p_power}}</td>
+                  <td class="mov has-text-centered small-spacing">{{player.movement}}</td>
+                  <td class="mph has-text-centered small-spacing">{{player.mph}}</td>
+                  <td class="ph1 has-text-centered small-spacing">{{player.pitch_1}}</td>
+                  <td class="ph2 has-text-centered small-spacing">{{player.pitch_2}}</td>
+                  <td class="ph3 has-text-centered small-spacing">{{player.pitch_3}}</td>
+                  <td class="hth has-text-centered small-spacing">{{player.health}}</td>
+                  <td class="sct has-text-centered small-spacing">{{player.scouting}}</td>
+                </tr>
+                <tr class="empty">
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </transition>
+          <transition name="fade">
+            <content-placeholders class="content-placeholders" v-if='players.length === 0' key="playerLoader">
+              <!--<content-placeholders-heading :img="true"/>-->
+              <content-placeholders-text :lines="30"/>
+            </content-placeholders>
+          </transition>
+        </div>
+      </div>
+      <div id='non-offensive-players' class="table-wrapper">
         <div class="tHeadContainer is-size-7 fixedHeader">
           <table id="tHead is-size-7 table is-striped is-fullwidth is-bordered">
             <tr>
@@ -217,8 +577,9 @@
         </div>
         <div class="tBodyContainer scrollable">
           <transition name="fade">
-            <table class="table is-striped is-fullwidth is-bordered" v-if="players.length > 0" key="players">
-              <tbody>
+            <div id='offensive-player-categories' v-if="_onlyOffensivePositionsSelected">
+              <table class="table is-striped is-fullwidth is-bordered" v-if="players.length > 0" key="players">
+                <tbody>
                 <tr v-for="player in players" class="player-data">
                   <td class="player is-size-7 large-spacing">
                     <span class="has-text-weight-bold is-size-7half">{{player.name}}</span>
@@ -263,8 +624,59 @@
                   <td></td>
                   <td></td>
                 </tr>
-              </tbody>
-            </table>
+                </tbody>
+              </table>
+            </div>
+            <div id='pitching-player-categories' v-else>
+              <table class="table is-striped is-fullwidth is-bordered" v-if="players.length > 0" key="players">
+                <tbody>
+                <tr v-for="player in players" class="player-data" hidden>
+                  <td class="player is-size-7 large-spacing">
+                    <span class="has-text-weight-bold is-size-7half">{{player.name}}</span>
+                    <!--<i class="fa fa-heart-o" aria-hidden="true" v-on:click='_toggle_modal'></i>-->
+                    <!--<i class="fa fa-plus" aria-hidden="true" v-on:click='_toggle_modal'></i>-->
+                    <!--<i class="fa fa-vcard-o" aria-hidden="true" v-on:click='_toggle_modal'></i>-->
+                    <div>
+                      <span>B/T: <span class="bats has-text-weight-bold">{{player.bats}}/{{player.throws}}</span></span>
+                      <span>Pos: <span class="pos has-text-weight-bold">{{player.position}}</span></span>
+                      <span>Age: <span class="age has-text-weight-bold">{{player.age}}</span></span>
+                    </div>
+                    <!--<div>-->
+                    <!--<span>Yr. Drafted: <span class="has-text-weight-bold">{{player.profile.draft_year}}</span></span>-->
+                    <!--<span>Birthday: <span class="has-text-weight-bold">{{player.birthday}}</span></span>-->
+                    <!--</div>-->
+                  </td>
+                  <td class="ovr has-text-centered small-spacing">{{player.overall}}</td>
+                  <td class="pck has-text-centered small-spacing">{{player.peak}}</td>
+                  <td class="end has-text-centered small-spacing">{{player.endurance}}</td>
+                  <td class="con has-text-centered small-spacing">{{player.control}}</td>
+                  <td class="pow has-text-centered small-spacing">{{player.p_power}}</td>
+                  <td class="mov has-text-centered small-spacing">{{player.movement}}</td>
+                  <td class="mph has-text-centered small-spacing">{{player.mph}}</td>
+                  <td class="ph1 has-text-centered small-spacing">{{player.pitch_1}}</td>
+                  <td class="ph2 has-text-centered small-spacing">{{player.pitch_2}}</td>
+                  <td class="ph3 has-text-centered small-spacing">{{player.pitch_3}}</td>
+                  <td class="hth has-text-centered small-spacing">{{player.health}}</td>
+                  <td class="sct has-text-centered small-spacing">{{player.scouting}}</td>
+                </tr>
+                <tr class="empty">
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
           </transition>
           <transition name="fade">
             <content-placeholders class="content-placeholders" v-if='players.length === 0' key="playerLoader">
@@ -293,9 +705,13 @@
 <script>
   import _ from 'lodash'
   import queryString from 'query-string'
+  import mogulField from '../field/field'
 
   export default {
     name: 'player',
+    components: {
+      mogulField
+    },
     data () {
       return {
         msg: 'Player page',
@@ -378,6 +794,16 @@
         } else {
           obj.classList.add('is-active')
         }
+      },
+      _onlyOffensivePositionsSelected: function () {
+        let value = false
+        if (this.$data.filteredPosition.length === 0) {
+          value = true
+        }
+        return value
+//        (filteredPosition.length === 0 ||
+//          (filteredPosition.indexOf('SP') === -1 &&
+//            filteredPosition.indexOf('RP') === -1 ))
       },
       _buildQueryString: function () {
         const parsed = queryString.parse(location.search)
