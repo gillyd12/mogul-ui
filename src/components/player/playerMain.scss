@@ -76,6 +76,7 @@ i:hover {
 
 td:not(.player) {
   font-size: .75rem;
+  padding-top: 18px;
 }
 
 .fa-sort-up {
@@ -208,4 +209,23 @@ table {
 
 tHead {
   margin-bottom: 0px;
+}
+
+.pitching {
+  padding-left: 10px;
+}
+
+.disable {
+  color: $steel-gray;
+
+  :hover {
+    color: $steel-gray;
+  }
+
+  label {
+    cursor: not-allowed;
+    input {
+      cursor: not-allowed;
+    }
+  }
 }

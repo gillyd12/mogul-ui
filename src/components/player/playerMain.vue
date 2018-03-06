@@ -44,7 +44,7 @@
         <div class="position">
           <div class="offense">
             <h6 class="is-size-7half">Offense</h6>
-            <div class="control">
+            <div class="control hitters">
               <label class="checkbox">
                 <input class='position-filter hitter' type="checkbox" v-model="filteredPosition" value="1B"> 1B
               </label>
@@ -73,7 +73,7 @@
           </div>
           <div class="pitching">
             <h6 class="is-size-7half">Pitching</h6>
-            <div class="control">
+            <div class="control pitchers">
               <label class="checkbox">
                 <input class='position-filter pitcher' type="checkbox" v-model="filteredPosition" value="SP"> SP
               </label>
@@ -90,7 +90,7 @@
         <div class="control">
           <div class="select is-small">
             <select v-model="filteredBats">
-              <option></option>
+              <option value="">All</option>
               <option value="S">Switch</option>
               <option value="R">Right</option>
               <option value="L">Left</option>
@@ -104,7 +104,7 @@
         <div class="control">
           <div class="select is-small">
             <select v-model="filteredThrows">
-              <option></option>
+              <option value="">All</option>
               <option value="R">Right</option>
               <option value="L">Left</option>
             </select>
@@ -204,11 +204,7 @@
                 <div class="sorted-item" v-on:click='_toggle_sort'>Dft. Yr.</div>
                 <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
               </th>
-              <th class="has-text-centered small-spacing">
-                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-                <div class="sorted-item" v-on:click='_toggle_sort'>MLB Sv.</div>
-                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-              </th>
+              <th class="has-text-centered small-spacing"></th>
               <th class="has-text-centered small-spacing"></th>
             </tr>
           </table>
@@ -243,7 +239,7 @@
                 <td class="inj has-text-centered small-spacing">{{player.injury_time}}</td>
                 <td class="ros has-text-centered small-spacing">{{player.roster}}</td>
                 <td class="ros has-text-centered small-spacing">{{player.draft_year}}</td>
-                <td class="ros has-text-centered small-spacing">{{player.mlb_service}}</td>
+                <td class="ros has-text-centered small-spacing"></td>
                 <td class="ros has-text-centered small-spacing"></td>
               </tr>
               <tr class="empty">
@@ -620,21 +616,25 @@
             for (let i = 0; i < hitters.length; i++) {
               hitters[i].disabled = true
             }
+            document.querySelector('.hitters').classList.add('disable')
           } else {
             let pitchers = document.querySelectorAll('.pitcher')
             for (let i = 0; i < pitchers.length; i++) {
               pitchers[i].disabled = true
             }
+            document.querySelector('.pitchers').classList.add('disable')
           }
         } else {
           let hitters = document.querySelectorAll('.hitter')
           for (let i = 0; i < hitters.length; i++) {
             hitters[i].disabled = false
           }
+          document.querySelector('.hitters').classList.remove('disable')
           let pitchers = document.querySelectorAll('.pitcher')
           for (let i = 0; i < pitchers.length; i++) {
             pitchers[i].disabled = false
           }
+          document.querySelector('.pitchers').classList.remove('disable')
         }
         this.getPlayers()
       },

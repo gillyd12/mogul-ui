@@ -133,3 +133,24 @@ select {
 .table {
   margin-bottom: 0px;
 }
+
+input {
+  font-size: .75rem;
+}
+
+label {
+  font-size: .75rem;
+}
+
+.control {
+  font-size: .75rem;
+}
+
+.select {
+  font-size: .75rem;
+
+  select {
+    font-size: .75rem;
+  }
+}
+
