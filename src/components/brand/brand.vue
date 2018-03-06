@@ -13,7 +13,7 @@
         <!--<router-link to="/players">Players</router-link>-->
       </div>
       <div class="level-item">
-        <span class="subtitle is-size-7">Last Updated: {{ details[0].realLifeSimDate }}</span>
+        <span class="subtitle is-size-7">Latest Sim: Year: {{ details[0].simYear }}, Number: {{ details[0].simNumber }}</span>
       </div>
     </div>
 
