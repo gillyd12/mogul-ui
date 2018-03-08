@@ -200,9 +200,7 @@
                 <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
               </th>
               <th class="has-text-centered small-spacing">
-                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-                <div class="sorted-item" v-on:click='_toggle_sort'>Dft. Yr.</div>
-                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+                <div>Dft. Yr.</div>
               </th>
               <th class="has-text-centered small-spacing"></th>
               <th class="has-text-centered small-spacing"></th>
@@ -238,7 +236,7 @@
                 <td class="hap has-text-centered small-spacing">{{player.happiness}}</td>
                 <td class="inj has-text-centered small-spacing">{{player.injury_time}}</td>
                 <td class="ros has-text-centered small-spacing">{{player.roster}}</td>
-                <td class="ros has-text-centered small-spacing">{{player.draft_year}}</td>
+                <td class="dft has-text-centered small-spacing">{{player.draft_year}}</td>
                 <td class="ros has-text-centered small-spacing"></td>
                 <td class="ros has-text-centered small-spacing"></td>
               </tr>
@@ -448,19 +446,13 @@
                 <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
               </th>
               <th class="has-text-centered small-spacing">
-                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-                <div class="sorted-item" v-on:click='_toggle_sort'>Pitch #1</div>
-                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+                <div>Pitch #1</div>
               </th>
               <th class="has-text-centered small-spacing">
-                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-                <div class="sorted-item" v-on:click='_toggle_sort'>Pitch #2</div>
-                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+                <div>Pitch #2</div>
               </th>
               <th class="has-text-centered small-spacing">
-                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-                <div class="sorted-item" v-on:click='_toggle_sort'>Pitch #3</div>
-                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+                <div>Pitch #3</div>
               </th>
               <th class="has-text-centered small-spacing"></th>
             </tr>
@@ -610,32 +602,7 @@
         this.getPlayers()
       },
       filteredPosition: function (event) {
-        if (this.$data.filteredPosition.length > 0) {
-          if (this.$data.filteredPosition.indexOf('SP') === 0 || this.$data.filteredPosition.indexOf('RP') === 0) {
-            let hitters = document.querySelectorAll('.hitter')
-            for (let i = 0; i < hitters.length; i++) {
-              hitters[i].disabled = true
-            }
-            document.querySelector('.hitters').classList.add('disable')
-          } else {
-            let pitchers = document.querySelectorAll('.pitcher')
-            for (let i = 0; i < pitchers.length; i++) {
-              pitchers[i].disabled = true
-            }
-            document.querySelector('.pitchers').classList.add('disable')
-          }
-        } else {
-          let hitters = document.querySelectorAll('.hitter')
-          for (let i = 0; i < hitters.length; i++) {
-            hitters[i].disabled = false
-          }
-          document.querySelector('.hitters').classList.remove('disable')
-          let pitchers = document.querySelectorAll('.pitcher')
-          for (let i = 0; i < pitchers.length; i++) {
-            pitchers[i].disabled = false
-          }
-          document.querySelector('.pitchers').classList.remove('disable')
-        }
+        this._updateFilteredDisplay(event)
         this.getPlayers()
       },
       simNumber: function () {
@@ -682,6 +649,34 @@
           obj.classList.remove('is-active')
         } else {
           obj.classList.add('is-active')
+        }
+      },
+      _updateFilteredDisplay: function (event) {
+        if (this.$data.filteredPosition.length > 0) {
+          if (this.$data.filteredPosition.indexOf('SP') === 0 || this.$data.filteredPosition.indexOf('RP') === 0) {
+            let hitters = document.querySelectorAll('.hitter')
+            for (let i = 0; i < hitters.length; i++) {
+              hitters[i].disabled = true
+            }
+            document.querySelector('.hitters').classList.add('disable')
+          } else {
+            let pitchers = document.querySelectorAll('.pitcher')
+            for (let i = 0; i < pitchers.length; i++) {
+              pitchers[i].disabled = true
+            }
+            document.querySelector('.pitchers').classList.add('disable')
+          }
+        } else {
+          let hitters = document.querySelectorAll('.hitter')
+          for (let i = 0; i < hitters.length; i++) {
+            hitters[i].disabled = false
+          }
+          document.querySelector('.hitters').classList.remove('disable')
+          let pitchers = document.querySelectorAll('.pitcher')
+          for (let i = 0; i < pitchers.length; i++) {
+            pitchers[i].disabled = false
+          }
+          document.querySelector('.pitchers').classList.remove('disable')
         }
       },
       _buildQueryString: function () {
@@ -731,18 +726,18 @@
           removeAllClasses('sorted-cell')
           event.target.previousElementSibling.firstChild.classList.add('fa-sort-up')
         }
-        addClass(category)
+//        addClass(category)
         this.$data.sort = categoryToModelName(category)
       }
     }
   }
 
-  function addClass (category) {
-    let items = document.querySelectorAll('.' + category)
-    for (let i = 0; i < items.length; i++) {
-      items[i].classList.add('sorted-cell')
-    }
-  }
+//  function addClass (category) {
+//    let items = document.querySelectorAll('.' + category)
+//    for (let i = 0; i < items.length; i++) {
+//      items[i].classList.add('sorted-cell')
+//    }
+//  }
 
   function removeAllClasses (name) {
     let items = document.querySelectorAll('.' + name)
@@ -752,79 +747,149 @@
   }
 
   function categoryToModelName (category) {
-    if (category === 'ovr') {
+    if (category === 'overall') {
       return 'overall'
-    } else if (category === 'pck') {
+    } else if (category === 'peak') {
       return 'peak'
-    } else if (category === 'con') {
+    } else if (category === 'contact') {
       return 'contact'
-    } else if (category === 'pow') {
+    } else if (category === 'power') {
       return 'o_power'
     } else if (category === 'eye') {
       return 'eye'
-    } else if (category === 'spd') {
+    } else if (category === 'speed') {
       return 'speed'
     } else if (category === 'arm') {
       return 'arm'
-    } else if (category === 'rng') {
+    } else if (category === 'range') {
       return 'range'
-    } else if (category === 'fld') {
+    } else if (category === 'fielding') {
       return 'fielding'
-    } else if (category === 'def') {
+    } else if (category === 'defense') {
       return 'defense'
-    } else if (category === 'hth') {
+    } else if (category === 'health') {
       return 'health'
-    } else if (category === 'sct') {
+    } else if (category === 'scouting') {
       return 'scouting'
+    } else if (category === 'salary') {
+      return 'salary'
+    } else if (category === 'happiness') {
+      return 'happiness'
+    } else if (category === 'contract') {
+      return 'contract'
+    } else if (category === 'injured') {
+      return 'injured'
+    } else if (category === 'roster') {
+      return 'roster'
+    } else if (category === 'dft. yr.') {
+      return 'dft. yr.'
+    } else if (category === 'endurance') {
+      return 'endurance'
+    } else if (category === 'control') {
+      return 'control'
+    } else if (category === 'power') {
+      return 'power'
+    } else if (category === 'movement') {
+      return 'movement'
+    } else if (category === 'mph') {
+      return 'mph'
+    } else if (category === 'pitch #1') {
+      return 'pitch #1'
+    } else if (category === 'pitch #2') {
+      return 'pitch #2'
+    } else if (category === 'pitch #3') {
+      return 'pitch #3'
     }
   }
 
   function sortModel (a, b, category) {
     let prev
     let next
-    if (category === 'ovr') {
+    if (category === 'overall') {
       prev = a.overall
       next = b.overall
-    } else if (category === 'pck') {
+    } else if (category === 'peak') {
       prev = a.peak
       next = b.peak
-    } else if (category === 'con') {
+    } else if (category === 'contact') {
       prev = a.contact
       next = b.contact
-    } else if (category === 'pow') {
+    } else if (category === 'power') {
       prev = a.o_power
       next = b.o_power
     } else if (category === 'eye') {
       prev = a.eye
       next = b.eye
-    } else if (category === 'spd') {
+    } else if (category === 'speed') {
       prev = a.speed
       next = b.speed
     } else if (category === 'arm') {
       prev = a.arm
       next = b.arm
-    } else if (category === 'rng') {
+    } else if (category === 'range') {
       prev = a.range
       next = b.range
-    } else if (category === 'fld') {
+    } else if (category === 'fielding') {
       prev = a.fielding
       next = b.fielding
-    } else if (category === 'def') {
+    } else if (category === 'defense') {
       prev = a.defense
       next = b.defense
-    } else if (category === 'hth') {
+    } else if (category === 'health') {
       prev = a.health
       next = b.health
-    } else if (category === 'sct') {
+    } else if (category === 'scouting') {
       prev = a.scouting
       next = b.scouting
+    } else if (category === 'salary') {
+      // eslint-disable-next-line
+      prev = Number(a.salary.replace(/[^0-9\.-]+/g,''))
+      // eslint-disable-next-line
+      next = Number(b.salary.replace(/[^0-9\.-]+/g,''))
+    } else if (category === 'happiness') {
+      prev = a.happiness
+      next = b.happiness
+    } else if (category === 'contract') {
+      prev = a.years
+      next = b.years
+    } else if (category === 'injured') {
+      prev = a.injury_time
+      next = b.injury_time
+    } else if (category === 'roster') {
+      prev = a.roster
+      next = b.roster
+    } else if (category === 'dft. yr.') {
+      prev = a.draft_year
+      next = b.draft_year
+    } else if (category === 'endurance') {
+      prev = a.endurance
+      next = b.endurance
+    } else if (category === 'control') {
+      prev = a.control
+      next = b.control
+    } else if (category === 'power') {
+      prev = a.p_power
+      next = b.p_power
+    } else if (category === 'movement') {
+      prev = a.movement
+      next = b.movement
+    } else if (category === 'mph') {
+      prev = a.mph
+      next = b.mph
+    } else if (category === 'pitch #1') {
+      prev = a.pitch_1
+      next = b.pitch_1
+    } else if (category === 'pitch #2') {
+      prev = a.pitch_2
+      next = b.pitch_2
+    } else if (category === 'pitch #3') {
+      prev = a.pitch_3
+      next = b.pitch_3
     }
     return {prev, next}
   }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style src="./playerMain.scss" lang="scss" scoped>
+<style src="./playerMain.scss" lang="scss" scoped></style>
 
-
-</style>
