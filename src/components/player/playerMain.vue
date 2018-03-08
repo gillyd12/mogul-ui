@@ -50,7 +50,6 @@
           </div>
         </div>
       </div>
-
       <div class="matches">
         <h6 class="title is-6">Bats</h6>
         <div class="control">
@@ -64,7 +63,6 @@
           </div>
         </div>
       </div>
-
       <div class="matches">
         <h6 class="title is-6">Throws</h6>
         <div class="control">
@@ -116,10 +114,9 @@
     </div>
     <div id="content">
       <div id='all-players' class="table-wrapper" v-if="_emptyFilteredPosition">
-        <div class="tHeadContainer is-size-7 fixedHeader">
-          <table class="tHead is-size-7 table is-striped is-fullwidth is-bordered">
+        <table class="table is-striped is-fullwidth">
             <tr>
-              <th class="large-spacing player-column">Player</th>
+              <th class="large-spacing">Player</th>
               <th class="has-text-centered small-spacing">
                 <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
                 <div class="sorted-item" v-on:click='_toggle_sort'>Overall</div>
@@ -172,13 +169,12 @@
               <th class="has-text-centered small-spacing"></th>
             </tr>
           </table>
-        </div>
         <div class="tBodyContainer scrollable">
           <transition name="fade">
-            <table class="table is-striped is-fullwidth is-bordered" v-if="players.length > 0" key="players">
+            <table class="table is-striped is-fullwidth" v-if="players.length > 0" key="players">
               <tbody>
               <tr v-for="player in players" class="player-data">
-                <td class="player is-size-7 large-spacing">
+                <td class="player large-spacing">
                   <span class="has-text-weight-bold">{{player.name}}</span>
                   <!--<i class="fa fa-heart-o" aria-hidden="true" v-on:click='_toggle_modal'></i>-->
                   <!--<i class="fa fa-plus" aria-hidden="true" v-on:click='_toggle_modal'></i>-->
@@ -206,7 +202,7 @@
                 <td class="ros has-text-centered small-spacing"></td>
                 <td class="ros has-text-centered small-spacing"></td>
               </tr>
-              <tr class="empty">
+              <tr class="empty-row">
                 <td></td>
                 <td></td>
                 <td></td>
@@ -233,10 +229,9 @@
         </div>
       </div>
       <div id='offensive-players' class="table-wrapper" v-else-if="_offensivePositionSelected">
-        <div class="tHeadContainer is-size-7 fixedHeader">
-          <table class="tHead is-size-7 table is-striped is-fullwidth is-bordered">
+        <table class="table is-striped is-fullwidth">
             <tr>
-              <th class="large-spacing player-column">Player</th>
+              <th class="large-spacing">Player</th>
               <th class="has-text-centered small-spacing">
                 <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
                 <div class="sorted-item" v-on:click='_toggle_sort'>Overall</div>
@@ -300,13 +295,12 @@
               <th class="has-text-centered small-spacing"></th>
             </tr>
           </table>
-        </div>
         <div class="tBodyContainer scrollable">
           <transition name="fade">
-            <table class="table is-striped is-fullwidth is-bordered" v-if="players.length > 0" key="players">
+            <table class="table is-striped is-fullwidth" v-if="players.length > 0" key="players">
               <tbody>
               <tr v-for="player in players" class="player-data">
-                <td class="player is-size-7 large-spacing">
+                <td class="player large-spacing">
                   <span class="has-text-weight-bold">{{player.name}}</span>
                   <!--<i class="fa fa-heart-o" aria-hidden="true" v-on:click='_toggle_modal'></i>-->
                   <!--<i class="fa fa-plus" aria-hidden="true" v-on:click='_toggle_modal'></i>-->
@@ -335,7 +329,7 @@
                 <td class="def has-text-centered small-spacing">{{player.defense}}</td>
                 <td class="def has-text-centered small-spacing"></td>
               </tr>
-              <tr class="empty">
+              <tr class="empty-row">
                 <td></td>
                 <td></td>
                 <td></td>
@@ -362,10 +356,9 @@
         </div>
       </div>
       <div id='non-offensive-players' class="table-wrapper" v-else-if="_pitcherPositionSelected">
-        <div class="tHeadContainer is-size-7 fixedHeader">
-          <table class="tHead is-size-7 table is-striped is-fullwidth is-bordered">
+        <table class="table is-striped is-fullwidth">
             <tr>
-              <th class="large-spacing player-column">Player</th>
+              <th class="large-spacing">Player</th>
               <th class="has-text-centered small-spacing">
                 <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
                 <div class="sorted-item" v-on:click='_toggle_sort'>Overall</div>
@@ -423,13 +416,12 @@
               <th class="has-text-centered small-spacing"></th>
             </tr>
           </table>
-        </div>
         <div class="tBodyContainer scrollable">
           <transition name="fade">
-            <table class="table is-striped is-fullwidth is-bordered" v-if="players.length > 0" key="players">
+            <table class="table is-striped is-fullwidth" v-if="players.length > 0" key="players">
               <tbody>
               <tr v-for="player in players" class="player-data">
-                <td class="player is-size-7 large-spacing">
+                <td class="player large-spacing">
                   <span class="has-text-weight-bold">{{player.name}}</span>
                   <!--<i class="fa fa-heart-o" aria-hidden="true" v-on:click='_toggle_modal'></i>-->
                   <!--<i class="fa fa-plus" aria-hidden="true" v-on:click='_toggle_modal'></i>-->
@@ -458,7 +450,7 @@
                 <td class="ros has-text-centered small-spacing">{{player.pitch_3}}</td>
                 <td class="ros has-text-centered small-spacing"></td>
               </tr>
-              <tr class="empty">
+              <tr class="empty-row">
                 <td></td>
                 <td></td>
                 <td></td>
@@ -1743,20 +1735,20 @@
             "id": "5a94bfa5dfcaf8a3070b2cd3"
           }
         ]
-        this.players = []
-        let paramStr = this._buildQueryString()
-        let query = this.$data.rootQuery
-        if (paramStr) {
-          query = query + '?' + paramStr
-        }
-        let url = process.env.LOCAL_HOST + query
-        fetch(url)
-          .then(stream => stream.json())
-          // eslint-disable-next-line
-          .then(data => {
-            this.players = data
-          })
-          .catch(error => console.error(error))
+//        this.players = []
+//        let paramStr = this._buildQueryString()
+//        let query = this.$data.rootQuery
+//        if (paramStr) {
+//          query = query + '?' + paramStr
+//        }
+//        let url = process.env.LOCAL_HOST + query
+//        fetch(url)
+//          .then(stream => stream.json())
+//          // eslint-disable-next-line
+//          .then(data => {
+//            this.players = data
+//          })
+//          .catch(error => console.error(error))
       },
       _updateProspectFilter: function (value) {
         if (value) {

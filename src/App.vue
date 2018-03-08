@@ -1,5 +1,5 @@
 <template>
-  <div id='background-container' class="container is-fluid">
+  <div id='background-container' class="container is-fluid is-size-7">
     <div id="app" class="container is-fullhd">
 
       <div id="brand">

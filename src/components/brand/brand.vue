@@ -13,7 +13,7 @@
         <!--<router-link to="/players">Players</router-link>-->
       </div>
       <div class="level-item">
-        <span><p class="is-italic is-size-7">Latest Sim: Year: {{ details[0].simYear }}, Number: {{ details[0].simNumber }}</p></span>
+        <span><p class="is-italic">Latest Sim: Year: {{ details[0].simYear }}, Number: {{ details[0].simNumber }}</p></span>
       </div>
     </div>
 
@@ -52,18 +52,17 @@
             "id": "5a94be88dfcaf8a3070b22dd"
           }
         ]
-//        this.$root.$emit('simDetails', this.details)
-
-        let data = '/simulation/getDetails'
-        let url = process.env.LOCAL_HOST + data
-        fetch(url)
-          .then(stream => stream.json())
-          // eslint-disable-next-line
-          .then(data => {
-            this.details = data
-            this.$root.$emit('simDetails', this.details)
-          })
-          .catch(error => console.error(error))
+        this.$root.$emit('simDetails', this.details)
+//        let data = '/simulation/getDetails'
+//        let url = process.env.LOCAL_HOST + data
+//        fetch(url)
+//          .then(stream => stream.json())
+//          // eslint-disable-next-line
+//          .then(data => {
+//            this.details = data
+//            this.$root.$emit('simDetails', this.details)
+//          })
+//          .catch(error => console.error(error))
       }
     }
   }

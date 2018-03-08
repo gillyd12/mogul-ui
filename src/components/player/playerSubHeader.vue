@@ -14,7 +14,7 @@
         </div>
       </div>
       <div class="level-item">
-        <span class="is-size-7">Sim Year:</span>
+        <span>Sim Year:</span>
       </div>
       <div class="level-item">
         <div class="select is-small">
