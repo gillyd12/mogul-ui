@@ -42,6 +42,7 @@ table tr td:first-child {
 
 table tr td:last-child {
   border-right: 0;
+  height: 55px;
 }
 
 td {
@@ -59,6 +60,10 @@ td {
   width: 100%;
 }
 
+.theadContainer {
+  height: 54px;
+}
+
 .thead > tr > th {
   vertical-align: middle;
   padding-top: 0px;
@@ -70,7 +75,8 @@ i:hover {
 }
 
 td:not(.player) {
-  font-size: 1.25rem;
+  font-size: .75rem;
+  padding-top: 18px;
 }
 
 .fa-sort-up {
@@ -95,7 +101,7 @@ td:not(.player) {
 }
 
 table {
-  margin-bottom: 10px;
+  //margin-bottom: 10px;
   table-layout: fixed;
   width: 100%;
   background-color: $dirty-white;
@@ -158,6 +164,10 @@ table {
   display: none;
 }
 
+.position {
+  display: flex;
+}
+
 .table-wrapper {
   clear: both;
   height: 100%;
@@ -166,7 +176,7 @@ table {
 
 .fixedHeader {
   width: 100%;
-  height: $rowHeight;
+  //height: $rowHeight;
   background-color: $deep-black;
 }
 
@@ -179,9 +189,11 @@ table {
 }
 
 .small-spacing {
-  //min-width: 40px;
-  //width: 63px;
-  //max-width: 63px;
+  min-width: 40px;
+  width: 62px;
+  max-width: 62px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .large-spacing {
@@ -191,5 +203,29 @@ table {
 }
 
 .empty {
-  height: 32px;
+  padding-top: 10px;
+  height: 42px;
+}
+
+tHead {
+  margin-bottom: 0px;
+}
+
+.pitching {
+  padding-left: 10px;
+}
+
+.disable {
+  color: $steel-gray;
+
+  :hover {
+    color: $steel-gray;
+  }
+
+  label {
+    cursor: not-allowed;
+    input {
+      cursor: not-allowed;
+    }
+  }
 }
