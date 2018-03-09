@@ -2,7 +2,7 @@
   <div id="mogul-brand" class="level">
     <div class="level-left">
       <div class="level-item">
-        <div class="brand-title">{{ msg }}</div>
+        <div class="is-size-5 has-text-weight-bold">{{ msg }}</div>
       </div>
     </div>
     <div class="level-right">
@@ -13,7 +13,8 @@
         <!--<router-link to="/players">Players</router-link>-->
       </div>
       <div class="level-item">
-        <span class="subtitle is-size-7">Latest Sim: Year: {{ details[0].simYear }}, Number: {{ details[0].simNumber }}</span>
+        <span><p class="is-italic">Latest Sim: Year: {{ details[0].simYear }}, Number: {{ details[0].simNumber
+          }}</p></span>
       </div>
     </div>
 

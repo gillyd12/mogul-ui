@@ -1,8 +1,5 @@
 @import "../../styles/variables.scss";
 
-$table-cell-heading-color: $deep-black;
-$rowHeight: 42px;
-
 #player {
   display: grid;
   grid-template-columns: 224px auto;
@@ -10,222 +7,66 @@ $rowHeight: 42px;
   height: calc(100vh - 152px);
   grid-template-areas:
     "filter main";
-}
 
-#player > #filter {
-  grid-area: filter;
-  padding: 12px;
-  background-color: $dirty-white;
-  height: 100%;
-  overflow: auto;
-}
+  > #filter {
+    grid-area: filter;
+    padding: 12px;
+    background-color: $dirty-white;
+    height: 100%;
+    overflow: auto;
 
-.matches {
-  padding: 12px;
-}
+    .matches {
+      padding: 12px;
+    }
 
-#player > #content {
-  background-color: $steel-gray;
-  padding: 0px 0px 0px 10px;
-  grid-area: main;
-}
+    .line {
+      background-color: black;
+      height: 2px;
+      margin-bottom: 24px;
+    }
 
-tr > th {
-  background-color: $deep-black;
-  color: $lilly-white;
-  border: none;
-}
+  }
 
-table tr td:first-child {
-  border-left: 0;
-}
+  > #content {
+    background-color: $steel-gray;
+    padding: 0px 0px 0px 10px;
+    grid-area: main;
 
-table tr td:last-child {
-  border-right: 0;
-  height: 55px;
-}
+    .table-wrapper {
+      clear: both;
+      height: 100%;
+      overflow: hidden;
+      box-shadow: 2px 2px 3px grey;
+    }
+  }
 
-td {
-  border-top: 0;
-  border-bottom: 0;
-  height: $rowHeight
-}
-
-.tbody > tr {
-  height: $rowHeight
-}
-
-.thead > tr {
-  height: $rowHeight;
-  width: 100%;
-}
-
-.theadContainer {
-  height: 54px;
-}
-
-.thead > tr > th {
-  vertical-align: middle;
-  padding-top: 0px;
-  padding-bottom: 0px;
-}
-
-i:hover {
-  cursor: pointer;
 }
 
 td:not(.player) {
-  font-size: .75rem;
-  padding-top: 18px;
+  padding-top: 6px;
 }
 
-.fa-sort-up {
-  vertical-align: bottom;
-}
+.matches {
 
-.fa-sort-down {
-  vertical-align: top;
-}
+  & .checkbox {
+    padding-right: 3px;
 
-.table.is-bordered td, .table.is-bordered th {
-  border-width: 0px;
-}
-
-.sorted-item {
-  height: 12px;
-  cursor: pointer;
-}
-
-.sorted-up {
-  height: 12px;
-}
-
-table {
-  //margin-bottom: 10px;
-  table-layout: fixed;
-  width: 100%;
-  background-color: $dirty-white;
-
-  th {
-    vertical-align: middle;
+    > input {
+      margin-right: 3px;
+    }
   }
-  tr {
-    height: 42px;
-  }
-}
-
-.title {
-  margin-bottom: 10px;
-}
-
-.title.is-6 {
-  font-size: $is-size-7half;
-}
-
-.tags {
-  margin-bottom: 0px;
-}
-
-.tag {
-  border: $tag-border;
-}
-
-.tag:not(body).is-delete {
-  margin-left: -1px;
-}
-
-.line {
-  background-color: black;
-  height: 2px;
-  margin-bottom: 24px;
-}
-
-.checkbox {
-  padding-right: 3px;
-
-  > input {
-    margin-right: 3px;
-  }
-}
-
-.radio {
-  padding-right: 3px;
-
-  > input {
-    margin-right: 3px;
-  }
-}
-
-.player-column {
-  padding: 0.5em 0.75em;
-}
-
-.display-none {
-  display: none;
 }
 
 .position {
   display: flex;
+
+  .pitching {
+    padding-left: 10px;
+  }
+
 }
 
-.table-wrapper {
-  clear: both;
-  height: 100%;
-  overflow: hidden;
-}
-
-.fixedHeader {
-  width: 100%;
-  //height: $rowHeight;
-  background-color: $deep-black;
-}
-
-.scrollable {
-  display: grid;
-  height: 100%;
-  overflow: overlay;
-  background-color: $dirty-white
-  //width: fit-content;
-}
-
-.small-spacing {
-  min-width: 40px;
-  width: 62px;
-  max-width: 62px;
-  padding-left: 0px;
-  padding-right: 0px;
-}
-
-.large-spacing {
-  min-width: 220px;
-  width: 220px;
-  max-width: 220px;
-}
-
-.empty {
+.empty-row {
   padding-top: 10px;
-  height: 42px;
-}
-
-tHead {
-  margin-bottom: 0px;
-}
-
-.pitching {
-  padding-left: 10px;
-}
-
-.disable {
-  color: $steel-gray;
-
-  :hover {
-    color: $steel-gray;
-  }
-
-  label {
-    cursor: not-allowed;
-    input {
-      cursor: not-allowed;
-    }
-  }
+  height: 56px;
 }

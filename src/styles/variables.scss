@@ -1,5 +1,6 @@
 @import "../../node_modules/bulma/sass/utilities/initial-variables";
 
+//colors
 $lilly-white: #FAFAFA;
 $snow-white: #FEFEFE;
 $dirty-white: #F8F8F8;
@@ -20,14 +21,11 @@ $select-width: 96px;
 //layout
 $gap: 0px;
 
-//fonts
-$brand-font-size: 1.125rem;
-//$is-size-7half: .875rem;
-//$is-size-8: 0.625rem;
-$is-size-7half: .75rem;
-$is-size-8: .75rem;
-
-
 //tags
-$tag-radius: 0px;
-$tag-border: 1px solid $steel-gray
+$tag-radius: 0px; //bulma override
+$tag-border: 1px solid $steel-gray;
+
+//tables
+$table-cell-heading-color: $deep-black; //bulma override
+
+

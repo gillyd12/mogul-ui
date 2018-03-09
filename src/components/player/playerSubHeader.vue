@@ -4,7 +4,7 @@
     <!-- Left side -->
     <div class="level-left">
       <div class="level-item">
-        <span class="has-text-weight-bold">{{ msg }}</span>
+        <span class="has-text-weight-bold"><h6 class="title is-6">{{ msg }}</h6></span>
       </div>
     </div>
     <div class="level-right">
@@ -14,7 +14,7 @@
         </div>
       </div>
       <div class="level-item">
-        <span class="is-size-7">Sim Year:</span>
+        <span>Sim Year:</span>
       </div>
       <div class="level-item">
         <div class="select is-small">
