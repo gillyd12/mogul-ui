@@ -115,60 +115,60 @@
     <div id="content">
       <div id='all-players' class="table-wrapper" v-if="_emptyFilteredPosition">
         <table class="table is-striped is-fullwidth">
-            <tr>
-              <th class="large-spacing">Player</th>
-              <th class="has-text-centered small-spacing">
-                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-                <div class="sorted-item" v-on:click='_toggle_sort'>Overall</div>
-                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-              </th>
-              <th class="has-text-centered small-spacing">
-                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-                <div class="sorted-item" v-on:click='_toggle_sort'>Peak</div>
-                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-              </th>
-              <th class="has-text-centered small-spacing">
-                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-                <div class="sorted-item" v-on:click='_toggle_sort'>Health</div>
-                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-              </th>
-              <th class="has-text-centered small-spacing">
-                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-                <div class="sorted-item" v-on:click='_toggle_sort'>Scouting</div>
-                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-              </th>
-              <th class="has-text-centered small-spacing">
-                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-                <div class="sorted-item" v-on:click='_toggle_sort'>Contract</div>
-                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-              </th>
-              <th class="has-text-centered small-spacing">
-                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-                <div class="sorted-item" v-on:click='_toggle_sort'>Salary</div>
-                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-              </th>
-              <th class="has-text-centered small-spacing">
-                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-                <div class="sorted-item" v-on:click='_toggle_sort'>Happiness</div>
-                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-              </th>
-              <th class="has-text-centered small-spacing">
-                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-                <div class="sorted-item" v-on:click='_toggle_sort'>Injured</div>
-                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-              </th>
-              <th class="has-text-centered small-spacing">
-                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-                <div class="sorted-item" v-on:click='_toggle_sort'>Roster</div>
-                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-              </th>
-              <th class="has-text-centered small-spacing">
-                <div>Dft. Yr.</div>
-              </th>
-              <th class="has-text-centered small-spacing"></th>
-              <th class="has-text-centered small-spacing"></th>
-            </tr>
-          </table>
+          <tr>
+            <th class="large-spacing">Player</th>
+            <th class="has-text-centered small-spacing">
+              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+              <div class="sorted-item" v-on:click='_toggle_sort'>Overall</div>
+              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+            </th>
+            <th class="has-text-centered small-spacing">
+              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+              <div class="sorted-item" v-on:click='_toggle_sort'>Peak</div>
+              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+            </th>
+            <th class="has-text-centered small-spacing">
+              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+              <div class="sorted-item" v-on:click='_toggle_sort'>Health</div>
+              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+            </th>
+            <th class="has-text-centered small-spacing">
+              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+              <div class="sorted-item" v-on:click='_toggle_sort'>Scouting</div>
+              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+            </th>
+            <th class="has-text-centered small-spacing">
+              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+              <div class="sorted-item" v-on:click='_toggle_sort'>Contract</div>
+              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+            </th>
+            <th class="has-text-centered small-spacing">
+              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+              <div class="sorted-item" v-on:click='_toggle_sort'>Salary</div>
+              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+            </th>
+            <th class="has-text-centered small-spacing">
+              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+              <div class="sorted-item" v-on:click='_toggle_sort'>Happiness</div>
+              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+            </th>
+            <th class="has-text-centered small-spacing">
+              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+              <div class="sorted-item" v-on:click='_toggle_sort'>Injured</div>
+              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+            </th>
+            <th class="has-text-centered small-spacing">
+              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+              <div class="sorted-item" v-on:click='_toggle_sort'>Roster</div>
+              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+            </th>
+            <th class="has-text-centered small-spacing">
+              <div>Dft. Yr.</div>
+            </th>
+            <th class="has-text-centered small-spacing"></th>
+            <th class="has-text-centered small-spacing"></th>
+          </tr>
+        </table>
         <div class="tBodyContainer scrollable">
           <transition name="fade">
             <table class="table is-striped is-fullwidth" v-if="players.length > 0" key="players">
@@ -230,71 +230,71 @@
       </div>
       <div id='offensive-players' class="table-wrapper" v-else-if="_offensivePositionSelected">
         <table class="table is-striped is-fullwidth">
-            <tr>
-              <th class="large-spacing">Player</th>
-              <th class="has-text-centered small-spacing">
-                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-                <div class="sorted-item" v-on:click='_toggle_sort'>Overall</div>
-                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-              </th>
-              <th class="has-text-centered small-spacing">
-                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-                <div class="sorted-item" v-on:click='_toggle_sort'>Peak</div>
-                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-              </th>
-              <th class="has-text-centered small-spacing">
-                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-                <div class="sorted-item" v-on:click='_toggle_sort'>Health</div>
-                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-              </th>
-              <th class="has-text-centered small-spacing">
-                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-                <div class="sorted-item" v-on:click='_toggle_sort'>Scouting</div>
-                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-              </th>
-              <th class="has-text-centered small-spacing">
-                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-                <div class="sorted-item" v-on:click='_toggle_sort'>Contact</div>
-                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-              </th>
-              <th class="has-text-centered small-spacing">
-                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-                <div class="sorted-item" v-on:click='_toggle_sort'>Power</div>
-                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-              </th>
-              <th class="has-text-centered small-spacing">
-                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-                <div class="sorted-item" v-on:click='_toggle_sort'>Eye</div>
-                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-              </th>
-              <th class="has-text-centered small-spacing">
-                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-                <div class="sorted-item" v-on:click='_toggle_sort'>Speed</div>
-                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-              </th>
-              <th class="has-text-centered small-spacing">
-                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-                <div class="sorted-item" v-on:click='_toggle_sort'>Arm</div>
-                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-              </th>
-              <th class="has-text-centered small-spacing">
-                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-                <div class="sorted-item" v-on:click='_toggle_sort'>Range</div>
-                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-              </th>
-              <th class="has-text-centered small-spacing">
-                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-                <div class="sorted-item" v-on:click='_toggle_sort'>Fielding</div>
-                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-              </th>
-              <th class="has-text-centered small-spacing">
-                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-                <div class="sorted-item" v-on:click='_toggle_sort'>Defense</div>
-                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-              </th>
-              <th class="has-text-centered small-spacing"></th>
-            </tr>
-          </table>
+          <tr>
+            <th class="large-spacing">Player</th>
+            <th class="has-text-centered small-spacing">
+              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+              <div class="sorted-item" v-on:click='_toggle_sort'>Overall</div>
+              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+            </th>
+            <th class="has-text-centered small-spacing">
+              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+              <div class="sorted-item" v-on:click='_toggle_sort'>Peak</div>
+              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+            </th>
+            <th class="has-text-centered small-spacing">
+              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+              <div class="sorted-item" v-on:click='_toggle_sort'>Health</div>
+              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+            </th>
+            <th class="has-text-centered small-spacing">
+              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+              <div class="sorted-item" v-on:click='_toggle_sort'>Scouting</div>
+              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+            </th>
+            <th class="has-text-centered small-spacing">
+              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+              <div class="sorted-item" v-on:click='_toggle_sort'>Contact</div>
+              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+            </th>
+            <th class="has-text-centered small-spacing">
+              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+              <div class="sorted-item" v-on:click='_toggle_sort'>Power</div>
+              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+            </th>
+            <th class="has-text-centered small-spacing">
+              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+              <div class="sorted-item" v-on:click='_toggle_sort'>Eye</div>
+              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+            </th>
+            <th class="has-text-centered small-spacing">
+              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+              <div class="sorted-item" v-on:click='_toggle_sort'>Speed</div>
+              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+            </th>
+            <th class="has-text-centered small-spacing">
+              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+              <div class="sorted-item" v-on:click='_toggle_sort'>Arm</div>
+              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+            </th>
+            <th class="has-text-centered small-spacing">
+              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+              <div class="sorted-item" v-on:click='_toggle_sort'>Range</div>
+              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+            </th>
+            <th class="has-text-centered small-spacing">
+              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+              <div class="sorted-item" v-on:click='_toggle_sort'>Fielding</div>
+              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+            </th>
+            <th class="has-text-centered small-spacing">
+              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+              <div class="sorted-item" v-on:click='_toggle_sort'>Defense</div>
+              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+            </th>
+            <th class="has-text-centered small-spacing"></th>
+          </tr>
+        </table>
         <div class="tBodyContainer scrollable">
           <transition name="fade">
             <table class="table is-striped is-fullwidth" v-if="players.length > 0" key="players">
@@ -357,65 +357,65 @@
       </div>
       <div id='non-offensive-players' class="table-wrapper" v-else-if="_pitcherPositionSelected">
         <table class="table is-striped is-fullwidth">
-            <tr>
-              <th class="large-spacing">Player</th>
-              <th class="has-text-centered small-spacing">
-                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-                <div class="sorted-item" v-on:click='_toggle_sort'>Overall</div>
-                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-              </th>
-              <th class="has-text-centered small-spacing">
-                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-                <div class="sorted-item" v-on:click='_toggle_sort'>Peak</div>
-                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-              </th>
-              <th class="has-text-centered small-spacing">
-                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-                <div class="sorted-item" v-on:click='_toggle_sort'>Health</div>
-                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-              </th>
-              <th class="has-text-centered small-spacing">
-                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-                <div class="sorted-item" v-on:click='_toggle_sort'>Scouting</div>
-                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-              </th>
-              <th class="has-text-centered small-spacing">
-                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-                <div class="sorted-item" v-on:click='_toggle_sort'>Endurance</div>
-                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-              </th>
-              <th class="has-text-centered small-spacing">
-                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-                <div class="sorted-item" v-on:click='_toggle_sort'>Control</div>
-                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-              </th>
-              <th class="has-text-centered small-spacing">
-                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-                <div class="sorted-item" v-on:click='_toggle_sort'>Power</div>
-                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-              </th>
-              <th class="has-text-centered small-spacing">
-                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-                <div class="sorted-item" v-on:click='_toggle_sort'>Movement</div>
-                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-              </th>
-              <th class="has-text-centered small-spacing">
-                <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
-                <div class="sorted-item" v-on:click='_toggle_sort'>MPH</div>
-                <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
-              </th>
-              <th class="has-text-centered small-spacing">
-                <div>Pitch #1</div>
-              </th>
-              <th class="has-text-centered small-spacing">
-                <div>Pitch #2</div>
-              </th>
-              <th class="has-text-centered small-spacing">
-                <div>Pitch #3</div>
-              </th>
-              <th class="has-text-centered small-spacing"></th>
-            </tr>
-          </table>
+          <tr>
+            <th class="large-spacing">Player</th>
+            <th class="has-text-centered small-spacing">
+              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+              <div class="sorted-item" v-on:click='_toggle_sort'>Overall</div>
+              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+            </th>
+            <th class="has-text-centered small-spacing">
+              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+              <div class="sorted-item" v-on:click='_toggle_sort'>Peak</div>
+              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+            </th>
+            <th class="has-text-centered small-spacing">
+              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+              <div class="sorted-item" v-on:click='_toggle_sort'>Health</div>
+              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+            </th>
+            <th class="has-text-centered small-spacing">
+              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+              <div class="sorted-item" v-on:click='_toggle_sort'>Scouting</div>
+              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+            </th>
+            <th class="has-text-centered small-spacing">
+              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+              <div class="sorted-item" v-on:click='_toggle_sort'>Endurance</div>
+              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+            </th>
+            <th class="has-text-centered small-spacing">
+              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+              <div class="sorted-item" v-on:click='_toggle_sort'>Control</div>
+              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+            </th>
+            <th class="has-text-centered small-spacing">
+              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+              <div class="sorted-item" v-on:click='_toggle_sort'>Power</div>
+              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+            </th>
+            <th class="has-text-centered small-spacing">
+              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+              <div class="sorted-item" v-on:click='_toggle_sort'>Movement</div>
+              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+            </th>
+            <th class="has-text-centered small-spacing">
+              <div class="sorted-up"><i class="fa" aria-hidden="true"></i></div>
+              <div class="sorted-item" v-on:click='_toggle_sort'>MPH</div>
+              <div class="sorted-down"><i class="fa" aria-hidden="true"></i></div>
+            </th>
+            <th class="has-text-centered small-spacing">
+              <div>Pitch #1</div>
+            </th>
+            <th class="has-text-centered small-spacing">
+              <div>Pitch #2</div>
+            </th>
+            <th class="has-text-centered small-spacing">
+              <div>Pitch #3</div>
+            </th>
+            <th class="has-text-centered small-spacing"></th>
+          </tr>
+        </table>
         <div class="tBodyContainer scrollable">
           <transition name="fade">
             <table class="table is-striped is-fullwidth" v-if="players.length > 0" key="players">
@@ -572,1183 +572,20 @@
     },
     methods: {
       getPlayers: function () {
-        /* eslint-disable */
-        this.players = [
-          {
-            "name": "Wilson, Jeremy",
-            "age": "26",
-            "height": "6'3\"",
-            "weight": "200 lbs",
-            "year_born": "2052",
-            "position": "SP",
-            "bats": "L",
-            "throws": "L",
-            "draft_year": "2070",
-            "debut_date": "--",
-            "debut_age": "--",
-            "salary": "$25,800,000",
-            "years": "5",
-            "arbitration": "No",
-            "free_agency": "Yes",
-            "organizational_roster": "ATL",
-            "player_option": "None",
-            "team_option": "None",
-            "no_trade": "No",
-            "seeking": "--",
-            "simYear": "2078",
-            "simNumber": "8",
-            "peak_at_draft": "97",
-            "overall": "95",
-            "peak": "95",
-            "upside": "--",
-            "health": "82",
-            "happiness": "-47",
-            "scouting": "9.8",
-            "injury_time": 0,
-            "years_played": "6",
-            "mlb_service": "6 years, 44 days",
-            "roster": "Starter #2",
-            "contact": "55",
-            "o_power": "58",
-            "speed": "60",
-            "eye": "62",
-            "bunt": "75",
-            "arm": "65",
-            "range": "60",
-            "fielding": "81",
-            "handling": "36",
-            "defense": "43",
-            "endurance": "72",
-            "control": "97",
-            "p_power": "86",
-            "movement": "98",
-            "mph": "92",
-            "pitch_1": "Curve",
-            "pitch_2": "Fastball",
-            "pitch_3": "Change",
-            "pitch_4": "Slider",
-            "pitch_5": "--",
-            "createdAt": "2018-02-27T02:16:31.665Z",
-            "updatedAt": "2018-02-27T02:16:31.665Z",
-            "id": "5a94bf7fdfcaf8a3070b2b81"
-          },
-          {
-            "name": "Tonnochy, Johnny",
-            "age": "26",
-            "height": "6'1\"",
-            "weight": "200 lbs",
-            "year_born": "2052",
-            "position": "SP",
-            "bats": "R",
-            "throws": "R",
-            "draft_year": "2070",
-            "debut_date": "--",
-            "debut_age": "--",
-            "salary": "$500,000",
-            "years": "Arb '78",
-            "arbitration": "Yes",
-            "free_agency": "No",
-            "organizational_roster": "CHC",
-            "player_option": "None",
-            "team_option": "None",
-            "no_trade": "No",
-            "seeking": "$21.4M for 7 yrs",
-            "simYear": "2078",
-            "simNumber": "8",
-            "peak_at_draft": "97",
-            "overall": "94",
-            "peak": "95",
-            "upside": "1",
-            "health": "87",
-            "happiness": "-92",
-            "scouting": "9.8",
-            "injury_time": 0,
-            "years_played": "4",
-            "mlb_service": "3 years, 11 days",
-            "roster": "Starter #3",
-            "contact": "49",
-            "o_power": "55",
-            "speed": "65",
-            "eye": "67",
-            "bunt": "86",
-            "arm": "80",
-            "range": "74",
-            "fielding": "73",
-            "handling": "37",
-            "defense": "49",
-            "endurance": "85",
-            "control": "83",
-            "p_power": "89",
-            "movement": "95",
-            "mph": "93",
-            "pitch_1": "Fastball",
-            "pitch_2": "Cutter",
-            "pitch_3": "Slider",
-            "pitch_4": "Curve",
-            "pitch_5": "--",
-            "createdAt": "2018-02-27T02:16:53.772Z",
-            "updatedAt": "2018-02-27T02:16:53.772Z",
-            "id": "5a94bf95dfcaf8a3070b2c42"
-          },
-          {
-            "name": "Cranstoun, Mike",
-            "age": "30",
-            "height": "6'1\"",
-            "weight": "210 lbs",
-            "year_born": "2047",
-            "position": "SP",
-            "bats": "R",
-            "throws": "R",
-            "draft_year": "2068",
-            "debut_date": "--",
-            "debut_age": "--",
-            "salary": "$35,000,000",
-            "years": "7",
-            "arbitration": "No",
-            "free_agency": "Yes",
-            "organizational_roster": "LAD",
-            "player_option": "None",
-            "team_option": "None",
-            "no_trade": "No",
-            "seeking": "--",
-            "simYear": "2078",
-            "simNumber": "8",
-            "peak_at_draft": "88",
-            "overall": "94",
-            "peak": "94",
-            "upside": "--",
-            "health": "85",
-            "happiness": "-35",
-            "scouting": "9.8",
-            "injury_time": 0,
-            "years_played": "7",
-            "mlb_service": "7 years, 123 days",
-            "roster": "Starter #1",
-            "contact": "49",
-            "o_power": "50",
-            "speed": "65",
-            "eye": "61",
-            "bunt": "70",
-            "arm": "66",
-            "range": "64",
-            "fielding": "79",
-            "handling": "36",
-            "defense": "45",
-            "endurance": "70",
-            "control": "91",
-            "p_power": "79",
-            "movement": "93",
-            "mph": "89",
-            "pitch_1": "Two-Seamer",
-            "pitch_2": "Slider",
-            "pitch_3": "Fastball",
-            "pitch_4": "Change",
-            "pitch_5": "--",
-            "createdAt": "2018-02-27T02:18:03.598Z",
-            "updatedAt": "2018-02-27T02:18:03.598Z",
-            "id": "5a94bfdbdfcaf8a3070b2eb9"
-          },
-          {
-            "name": "William, Tom",
-            "age": "28",
-            "height": "6'3\"",
-            "weight": "213 lbs",
-            "year_born": "2049",
-            "position": "SP",
-            "bats": "R",
-            "throws": "R",
-            "draft_year": "2066",
-            "debut_date": "--",
-            "debut_age": "--",
-            "salary": "$18,600,000",
-            "years": "5",
-            "arbitration": "No",
-            "free_agency": "Yes",
-            "organizational_roster": "ATL",
-            "player_option": "None",
-            "team_option": "None",
-            "no_trade": "No",
-            "seeking": "--",
-            "simYear": "2078",
-            "simNumber": "8",
-            "peak_at_draft": "96",
-            "overall": "93",
-            "peak": "93",
-            "upside": "--",
-            "health": "83",
-            "happiness": "11",
-            "scouting": "9.8",
-            "injury_time": 0,
-            "years_played": "6",
-            "mlb_service": "6 years, 60 days",
-            "roster": "Starter #1",
-            "contact": "51",
-            "o_power": "50",
-            "speed": "63",
-            "eye": "62",
-            "bunt": "72",
-            "arm": "71",
-            "range": "64",
-            "fielding": "71",
-            "handling": "36",
-            "defense": "44",
-            "endurance": "86",
-            "control": "89",
-            "p_power": "88",
-            "movement": "97",
-            "mph": "90",
-            "pitch_1": "Curve",
-            "pitch_2": "Cutter",
-            "pitch_3": "Change",
-            "pitch_4": "Fastball",
-            "pitch_5": "--",
-            "createdAt": "2018-02-27T02:16:31.653Z",
-            "updatedAt": "2018-02-27T02:16:31.653Z",
-            "id": "5a94bf7fdfcaf8a3070b2b7e"
-          },
-          {
-            "name": "Audley, Marc",
-            "age": "23",
-            "height": "6'5\"",
-            "weight": "210 lbs",
-            "year_born": "2054",
-            "position": "SP",
-            "bats": "R",
-            "throws": "R",
-            "draft_year": "2071",
-            "debut_date": "--",
-            "debut_age": "--",
-            "salary": "$500,000",
-            "years": "Arb '80",
-            "arbitration": "No",
-            "free_agency": "No",
-            "organizational_roster": "ATL",
-            "player_option": "None",
-            "team_option": "None",
-            "no_trade": "No",
-            "seeking": "$1.7M for 1 yr",
-            "simYear": "2078",
-            "simNumber": "8",
-            "peak_at_draft": "91",
-            "overall": "93",
-            "peak": "94",
-            "upside": "1",
-            "health": "74",
-            "happiness": "-68",
-            "scouting": "9.8",
-            "injury_time": 2,
-            "years_played": "Rookie",
-            "mlb_service": "125 days",
-            "roster": "Starter #3",
-            "contact": "52",
-            "o_power": "53",
-            "speed": "61",
-            "eye": "63",
-            "bunt": "72",
-            "arm": "55",
-            "range": "57",
-            "fielding": "76",
-            "handling": "36",
-            "defense": "47",
-            "endurance": "70",
-            "control": "95",
-            "p_power": "79",
-            "movement": "96",
-            "mph": "89",
-            "pitch_1": "Fastball",
-            "pitch_2": "Change",
-            "pitch_3": "Cutter",
-            "pitch_4": "Curve",
-            "pitch_5": "--",
-            "createdAt": "2018-02-27T02:16:32.272Z",
-            "updatedAt": "2018-02-27T02:16:32.272Z",
-            "id": "5a94bf80dfcaf8a3070b2b84"
-          },
-          {
-            "name": "Montehgudo, Angelo",
-            "age": "27",
-            "height": "6'3\"",
-            "weight": "225 lbs",
-            "year_born": "2050",
-            "position": "SP",
-            "bats": "R",
-            "throws": "R",
-            "draft_year": "2070",
-            "debut_date": "--",
-            "debut_age": "--",
-            "salary": "$10,500,000",
-            "years": "1",
-            "arbitration": "Yes",
-            "free_agency": "No",
-            "organizational_roster": "ATL",
-            "player_option": "None",
-            "team_option": "None",
-            "no_trade": "No",
-            "seeking": "$12.2M for 1 yr",
-            "simYear": "2078",
-            "simNumber": "8",
-            "peak_at_draft": "85",
-            "overall": "93",
-            "peak": "93",
-            "upside": "--",
-            "health": "78",
-            "happiness": "-38",
-            "scouting": "9.8",
-            "injury_time": 0,
-            "years_played": "3",
-            "mlb_service": "3 years, 123 days",
-            "roster": "Starter #4",
-            "contact": "50",
-            "o_power": "49",
-            "speed": "64",
-            "eye": "62",
-            "bunt": "70",
-            "arm": "70",
-            "range": "67",
-            "fielding": "81",
-            "handling": "37",
-            "defense": "44",
-            "endurance": "86",
-            "control": "85",
-            "p_power": "97",
-            "movement": "97",
-            "mph": "93",
-            "pitch_1": "Fastball",
-            "pitch_2": "Curve",
-            "pitch_3": "Slider",
-            "pitch_4": "Cutter",
-            "pitch_5": "Change",
-            "createdAt": "2018-02-27T02:16:32.274Z",
-            "updatedAt": "2018-02-27T02:16:32.274Z",
-            "id": "5a94bf80dfcaf8a3070b2b86"
-          },
-          {
-            "name": "Carter, James",
-            "age": "29",
-            "height": "5'10\"",
-            "weight": "180 lbs",
-            "year_born": "2048",
-            "position": "SP",
-            "bats": "L",
-            "throws": "L",
-            "draft_year": "2068",
-            "debut_date": "--",
-            "debut_age": "--",
-            "salary": "$13,500,000",
-            "years": "5",
-            "arbitration": "No",
-            "free_agency": "Yes",
-            "organizational_roster": "BAL",
-            "player_option": "None",
-            "team_option": "None",
-            "no_trade": "No",
-            "seeking": "--",
-            "simYear": "2078",
-            "simNumber": "8",
-            "peak_at_draft": "88",
-            "overall": "93",
-            "peak": "93",
-            "upside": "--",
-            "health": "75",
-            "happiness": "94",
-            "scouting": "9.8",
-            "injury_time": 0,
-            "years_played": "7",
-            "mlb_service": "7 years, 120 days",
-            "roster": "Starter #1",
-            "contact": "55",
-            "o_power": "55",
-            "speed": "61",
-            "eye": "63",
-            "bunt": "75",
-            "arm": "67",
-            "range": "62",
-            "fielding": "73",
-            "handling": "36",
-            "defense": "42",
-            "endurance": "86",
-            "control": "91",
-            "p_power": "93",
-            "movement": "94",
-            "mph": "94",
-            "pitch_1": "Fastball",
-            "pitch_2": "Change",
-            "pitch_3": "Cutter",
-            "pitch_4": "Slider",
-            "pitch_5": "--",
-            "createdAt": "2018-02-27T02:16:37.767Z",
-            "updatedAt": "2018-02-27T02:16:37.767Z",
-            "id": "5a94bf85dfcaf8a3070b2bb6"
-          },
-          {
-            "name": "Bertot, Roberto",
-            "age": "29",
-            "height": "6'1\"",
-            "weight": "206 lbs",
-            "year_born": "2048",
-            "position": "SP",
-            "bats": "L",
-            "throws": "L",
-            "draft_year": "2066",
-            "debut_date": "--",
-            "debut_age": "--",
-            "salary": "$16,200,000",
-            "years": "5",
-            "arbitration": "No",
-            "free_agency": "Yes",
-            "organizational_roster": "BOS",
-            "player_option": "None",
-            "team_option": "None",
-            "no_trade": "No",
-            "seeking": "--",
-            "simYear": "2078",
-            "simNumber": "8",
-            "peak_at_draft": "86",
-            "overall": "93",
-            "peak": "93",
-            "upside": "--",
-            "health": "89",
-            "happiness": "89",
-            "scouting": "9.8",
-            "injury_time": 0,
-            "years_played": "5",
-            "mlb_service": "5 years, 138 days",
-            "roster": "Starter #2",
-            "contact": "55",
-            "o_power": "54",
-            "speed": "67",
-            "eye": "62",
-            "bunt": "83",
-            "arm": "84",
-            "range": "75",
-            "fielding": "82",
-            "handling": "37",
-            "defense": "42",
-            "endurance": "83",
-            "control": "96",
-            "p_power": "81",
-            "movement": "96",
-            "mph": "88",
-            "pitch_1": "Sinker",
-            "pitch_2": "Curve",
-            "pitch_3": "Fastball",
-            "pitch_4": "Slider",
-            "pitch_5": "Circle Change",
-            "createdAt": "2018-02-27T02:16:46.417Z",
-            "updatedAt": "2018-02-27T02:16:46.417Z",
-            "id": "5a94bf8edfcaf8a3070b2c02"
-          },
-          {
-            "name": "Edmunds, Rod",
-            "age": "24",
-            "height": "6'3\"",
-            "weight": "204 lbs",
-            "year_born": "2053",
-            "position": "SP",
-            "bats": "R",
-            "throws": "R",
-            "draft_year": "2070",
-            "debut_date": "--",
-            "debut_age": "--",
-            "salary": "$11,000,000",
-            "years": "1",
-            "arbitration": "Yes",
-            "free_agency": "No",
-            "organizational_roster": "BOS",
-            "player_option": "None",
-            "team_option": "None",
-            "no_trade": "No",
-            "seeking": "$11.5M for 1 yr",
-            "simYear": "2078",
-            "simNumber": "8",
-            "peak_at_draft": "94",
-            "overall": "93",
-            "peak": "93",
-            "upside": "--",
-            "health": "72",
-            "happiness": "-18",
-            "scouting": "9.8",
-            "injury_time": 0,
-            "years_played": "4",
-            "mlb_service": "4 years, 59 days",
-            "roster": "Starter #1",
-            "contact": "50",
-            "o_power": "50",
-            "speed": "63",
-            "eye": "63",
-            "bunt": "79",
-            "arm": "67",
-            "range": "65",
-            "fielding": "78",
-            "handling": "36",
-            "defense": "41",
-            "endurance": "88",
-            "control": "84",
-            "p_power": "85",
-            "movement": "95",
-            "mph": "92",
-            "pitch_1": "Sinker",
-            "pitch_2": "Fastball",
-            "pitch_3": "Slider",
-            "pitch_4": "Circle Change",
-            "pitch_5": "--",
-            "createdAt": "2018-02-27T02:16:46.418Z",
-            "updatedAt": "2018-02-27T02:16:46.418Z",
-            "id": "5a94bf8edfcaf8a3070b2c03"
-          },
-          {
-            "name": "Salas, Max",
-            "age": "28",
-            "height": "6'2\"",
-            "weight": "220 lbs",
-            "year_born": "2049",
-            "position": "SP",
-            "bats": "R",
-            "throws": "R",
-            "draft_year": "2067",
-            "debut_date": "--",
-            "debut_age": "--",
-            "salary": "$14,000,000",
-            "years": "1",
-            "arbitration": "No",
-            "free_agency": "Yes",
-            "organizational_roster": "CHW",
-            "player_option": "None",
-            "team_option": "None",
-            "no_trade": "No",
-            "seeking": "$16.1M for 1 yr",
-            "simYear": "2078",
-            "simNumber": "8",
-            "peak_at_draft": "97",
-            "overall": "93",
-            "peak": "93",
-            "upside": "--",
-            "health": "88",
-            "happiness": "24",
-            "scouting": "9.8",
-            "injury_time": 0,
-            "years_played": "6",
-            "mlb_service": "6 years, 0 days",
-            "roster": "Starter #1",
-            "contact": "51",
-            "o_power": "57",
-            "speed": "62",
-            "eye": "63",
-            "bunt": "81",
-            "arm": "67",
-            "range": "65",
-            "fielding": "78",
-            "handling": "36",
-            "defense": "41",
-            "endurance": "88",
-            "control": "82",
-            "p_power": "86",
-            "movement": "94",
-            "mph": "92",
-            "pitch_1": "Slider",
-            "pitch_2": "Fastball",
-            "pitch_3": "Curve",
-            "pitch_4": "Two-Seamer",
-            "pitch_5": "--",
-            "createdAt": "2018-02-27T02:17:02.323Z",
-            "updatedAt": "2018-02-27T02:17:02.323Z",
-            "id": "5a94bf9edfcaf8a3070b2c8e"
-          },
-          {
-            "name": "Smith, Homer",
-            "age": "35",
-            "height": "6'1\"",
-            "weight": "215 lbs",
-            "year_born": "2043",
-            "position": "SP",
-            "bats": "R",
-            "throws": "R",
-            "draft_year": "2064",
-            "debut_date": "--",
-            "debut_age": "--",
-            "salary": "$13,600,000",
-            "years": "3",
-            "arbitration": "No",
-            "free_agency": "Yes",
-            "organizational_roster": "OAK",
-            "player_option": "None",
-            "team_option": "None",
-            "no_trade": "No",
-            "seeking": "--",
-            "simYear": "2078",
-            "simNumber": "8",
-            "peak_at_draft": "92",
-            "overall": "93",
-            "peak": "93",
-            "upside": "--",
-            "health": "76",
-            "happiness": "87",
-            "scouting": "9.8",
-            "injury_time": 0,
-            "years_played": "11",
-            "mlb_service": "11 years, 111 days",
-            "roster": "Starter #1",
-            "contact": "54",
-            "o_power": "53",
-            "speed": "63",
-            "eye": "62",
-            "bunt": "73",
-            "arm": "71",
-            "range": "67",
-            "fielding": "82",
-            "handling": "37",
-            "defense": "43",
-            "endurance": "84",
-            "control": "97",
-            "p_power": "81",
-            "movement": "95",
-            "mph": "93",
-            "pitch_1": "Change",
-            "pitch_2": "Cutter",
-            "pitch_3": "Fastball",
-            "pitch_4": "Splitter",
-            "pitch_5": "--",
-            "createdAt": "2018-02-27T02:18:46.674Z",
-            "updatedAt": "2018-02-27T02:18:46.674Z",
-            "id": "5a94c006dfcaf8a3070b3031"
-          },
-          {
-            "name": "Verastequi, Victor",
-            "age": "30",
-            "height": "6'0\"",
-            "weight": "200 lbs",
-            "year_born": "2048",
-            "position": "SP",
-            "bats": "R",
-            "throws": "R",
-            "draft_year": "2067",
-            "debut_date": "--",
-            "debut_age": "--",
-            "salary": "$21,000,000",
-            "years": "6",
-            "arbitration": "No",
-            "free_agency": "Yes",
-            "organizational_roster": "OAK",
-            "player_option": "None",
-            "team_option": "None",
-            "no_trade": "No",
-            "seeking": "--",
-            "simYear": "2078",
-            "simNumber": "8",
-            "peak_at_draft": "93",
-            "overall": "93",
-            "peak": "93",
-            "upside": "--",
-            "health": "84",
-            "happiness": "-61",
-            "scouting": "9.8",
-            "injury_time": 0,
-            "years_played": "7",
-            "mlb_service": "7 years, 123 days",
-            "roster": "Starter #2",
-            "contact": "51",
-            "o_power": "52",
-            "speed": "63",
-            "eye": "62",
-            "bunt": "72",
-            "arm": "70",
-            "range": "66",
-            "fielding": "75",
-            "handling": "36",
-            "defense": "43",
-            "endurance": "91",
-            "control": "81",
-            "p_power": "91",
-            "movement": "90",
-            "mph": "95",
-            "pitch_1": "Fastball",
-            "pitch_2": "Cutter",
-            "pitch_3": "Curve",
-            "pitch_4": "Slider",
-            "pitch_5": "--",
-            "createdAt": "2018-02-27T02:18:46.742Z",
-            "updatedAt": "2018-02-27T02:18:46.742Z",
-            "id": "5a94c006dfcaf8a3070b3032"
-          },
-          {
-            "name": "Devlin, Nathan",
-            "age": "29",
-            "height": "6'5\"",
-            "weight": "235 lbs",
-            "year_born": "2048",
-            "position": "SP",
-            "bats": "R",
-            "throws": "R",
-            "draft_year": "2067",
-            "debut_date": "--",
-            "debut_age": "--",
-            "salary": "$18,000,000",
-            "years": "5",
-            "arbitration": "No",
-            "free_agency": "Yes",
-            "organizational_roster": "PHI",
-            "player_option": "None",
-            "team_option": "None",
-            "no_trade": "No",
-            "seeking": "--",
-            "simYear": "2078",
-            "simNumber": "8",
-            "peak_at_draft": "94",
-            "overall": "93",
-            "peak": "93",
-            "upside": "--",
-            "health": "90",
-            "happiness": "45",
-            "scouting": "9.8",
-            "injury_time": 0,
-            "years_played": "6",
-            "mlb_service": "6 years, 71 days",
-            "roster": "Starter #3",
-            "contact": "51",
-            "o_power": "54",
-            "speed": "63",
-            "eye": "63",
-            "bunt": "69",
-            "arm": "73",
-            "range": "65",
-            "fielding": "73",
-            "handling": "36",
-            "defense": "48",
-            "endurance": "74",
-            "control": "88",
-            "p_power": "76",
-            "movement": "93",
-            "mph": "88",
-            "pitch_1": "Two-Seamer",
-            "pitch_2": "Change",
-            "pitch_3": "Fastball",
-            "pitch_4": "Curve",
-            "pitch_5": "--",
-            "createdAt": "2018-02-27T02:18:53.232Z",
-            "updatedAt": "2018-02-27T02:18:53.232Z",
-            "id": "5a94c00ddfcaf8a3070b306d"
-          },
-          {
-            "name": "Hadleman, Nathan",
-            "age": "28",
-            "height": "6'2\"",
-            "weight": "210 lbs",
-            "year_born": "2050",
-            "position": "SP",
-            "bats": "R",
-            "throws": "R",
-            "draft_year": "2070",
-            "debut_date": "--",
-            "debut_age": "--",
-            "salary": "$9,900,000",
-            "years": "1",
-            "arbitration": "Yes",
-            "free_agency": "No",
-            "organizational_roster": "PHI",
-            "player_option": "None",
-            "team_option": "None",
-            "no_trade": "No",
-            "seeking": "$8.8M for 1 yr",
-            "simYear": "2078",
-            "simNumber": "8",
-            "peak_at_draft": "93",
-            "overall": "93",
-            "peak": "93",
-            "upside": "--",
-            "health": "76",
-            "happiness": "-75",
-            "scouting": "9.8",
-            "injury_time": 0,
-            "years_played": "4",
-            "mlb_service": "4 years, 38 days",
-            "roster": "Starter #4",
-            "contact": "55",
-            "o_power": "54",
-            "speed": "62",
-            "eye": "63",
-            "bunt": "72",
-            "arm": "73",
-            "range": "65",
-            "fielding": "73",
-            "handling": "36",
-            "defense": "48",
-            "endurance": "67",
-            "control": "94",
-            "p_power": "79",
-            "movement": "95",
-            "mph": "88",
-            "pitch_1": "Splitter",
-            "pitch_2": "Fastball",
-            "pitch_3": "Slider",
-            "pitch_4": "Change",
-            "pitch_5": "--",
-            "createdAt": "2018-02-27T02:18:53.388Z",
-            "updatedAt": "2018-02-27T02:18:53.388Z",
-            "id": "5a94c00ddfcaf8a3070b306f"
-          },
-          {
-            "name": "Carolino, Damian",
-            "age": "30",
-            "height": "6'7\"",
-            "weight": "236 lbs",
-            "year_born": "2047",
-            "position": "SP",
-            "bats": "L",
-            "throws": "L",
-            "draft_year": "2067",
-            "debut_date": "--",
-            "debut_age": "--",
-            "salary": "$12,000,000",
-            "years": "4",
-            "arbitration": "No",
-            "free_agency": "Yes",
-            "organizational_roster": "SDP",
-            "player_option": "None",
-            "team_option": "None",
-            "no_trade": "No",
-            "seeking": "--",
-            "simYear": "2078",
-            "simNumber": "8",
-            "peak_at_draft": "85",
-            "overall": "93",
-            "peak": "93",
-            "upside": "--",
-            "health": "80",
-            "happiness": "10",
-            "scouting": "9.8",
-            "injury_time": 0,
-            "years_played": "7",
-            "mlb_service": "7 years, 123 days",
-            "roster": "Starter #1",
-            "contact": "51",
-            "o_power": "59",
-            "speed": "59",
-            "eye": "63",
-            "bunt": "72",
-            "arm": "59",
-            "range": "57",
-            "fielding": "72",
-            "handling": "35",
-            "defense": "41",
-            "endurance": "81",
-            "control": "87",
-            "p_power": "82",
-            "movement": "94",
-            "mph": "90",
-            "pitch_1": "Slider",
-            "pitch_2": "Fastball",
-            "pitch_3": "Circle Change",
-            "pitch_4": "Cutter",
-            "pitch_5": "Curve",
-            "createdAt": "2018-02-27T02:19:06.640Z",
-            "updatedAt": "2018-02-27T02:19:06.640Z",
-            "id": "5a94c01adfcaf8a3070b30e3"
-          },
-          {
-            "name": "Abberley, Andrew",
-            "age": "28",
-            "height": "6'1\"",
-            "weight": "195 lbs",
-            "year_born": "2050",
-            "position": "SP",
-            "bats": "L",
-            "throws": "L",
-            "draft_year": "2071",
-            "debut_date": "Jun 13, 2076",
-            "debut_age": "26",
-            "salary": "$12,900,000",
-            "years": "4",
-            "arbitration": "No",
-            "free_agency": "Yes",
-            "organizational_roster": "SEA",
-            "player_option": "None",
-            "team_option": "None",
-            "no_trade": "No",
-            "seeking": "--",
-            "simYear": "2078",
-            "simNumber": "8",
-            "peak_at_draft": "94",
-            "overall": "93",
-            "peak": "93",
-            "upside": "--",
-            "health": "80",
-            "happiness": "-34",
-            "scouting": "9.8",
-            "injury_time": 0,
-            "years_played": "5",
-            "mlb_service": "5 years, 61 days",
-            "roster": "Starter #3",
-            "contact": "51",
-            "o_power": "49",
-            "speed": "61",
-            "eye": "62",
-            "bunt": "70",
-            "arm": "65",
-            "range": "59",
-            "fielding": "81",
-            "handling": "36",
-            "defense": "48",
-            "endurance": "70",
-            "control": "79",
-            "p_power": "87",
-            "movement": "93",
-            "mph": "93",
-            "pitch_1": "Fastball",
-            "pitch_2": "Curve",
-            "pitch_3": "Cutter",
-            "pitch_4": "Slider",
-            "pitch_5": "Circle Change",
-            "createdAt": "2018-02-27T02:19:22.971Z",
-            "updatedAt": "2018-02-27T02:19:22.971Z",
-            "id": "5a94c02adfcaf8a3070b3173"
-          },
-          {
-            "name": "Gabbard, James",
-            "age": "30",
-            "height": "6'6\"",
-            "weight": "230 lbs",
-            "year_born": "2048",
-            "position": "SP",
-            "bats": "R",
-            "throws": "R",
-            "draft_year": "2068",
-            "debut_date": "--",
-            "debut_age": "--",
-            "salary": "$14,600,000",
-            "years": "6",
-            "arbitration": "No",
-            "free_agency": "Yes",
-            "organizational_roster": "STL",
-            "player_option": "None",
-            "team_option": "None",
-            "no_trade": "No",
-            "seeking": "--",
-            "simYear": "2078",
-            "simNumber": "8",
-            "peak_at_draft": "84",
-            "overall": "93",
-            "peak": "93",
-            "upside": "--",
-            "health": "78",
-            "happiness": "90",
-            "scouting": "9.8",
-            "injury_time": 0,
-            "years_played": "7",
-            "mlb_service": "7 years, 79 days",
-            "roster": "Starter #1",
-            "contact": "47",
-            "o_power": "54",
-            "speed": "62",
-            "eye": "59",
-            "bunt": "83",
-            "arm": "67",
-            "range": "66",
-            "fielding": "78",
-            "handling": "36",
-            "defense": "48",
-            "endurance": "85",
-            "control": "92",
-            "p_power": "86",
-            "movement": "93",
-            "mph": "95",
-            "pitch_1": "Fastball",
-            "pitch_2": "Cutter",
-            "pitch_3": "Curve",
-            "pitch_4": "Change",
-            "pitch_5": "--",
-            "createdAt": "2018-02-27T02:19:29.278Z",
-            "updatedAt": "2018-02-27T02:19:29.278Z",
-            "id": "5a94c031dfcaf8a3070b31ac"
-          },
-          {
-            "name": "Verdogo, Manuel",
-            "age": "33",
-            "height": "6'1\"",
-            "weight": "213 lbs",
-            "year_born": "2044",
-            "position": "SP",
-            "bats": "R",
-            "throws": "R",
-            "draft_year": "2062",
-            "debut_date": "--",
-            "debut_age": "--",
-            "salary": "$15,000,000",
-            "years": "1",
-            "arbitration": "No",
-            "free_agency": "Yes",
-            "organizational_roster": "WSN",
-            "player_option": "None",
-            "team_option": "None",
-            "no_trade": "No",
-            "seeking": "$26.5M for 5 yrs",
-            "simYear": "2078",
-            "simNumber": "8",
-            "peak_at_draft": "89",
-            "overall": "93",
-            "peak": "93",
-            "upside": "--",
-            "health": "87",
-            "happiness": "-64",
-            "scouting": "9.8",
-            "injury_time": 0,
-            "years_played": "11",
-            "mlb_service": "11 years, 37 days",
-            "roster": "Starter #1",
-            "contact": "49",
-            "o_power": "46",
-            "speed": "65",
-            "eye": "59",
-            "bunt": "69",
-            "arm": "58",
-            "range": "56",
-            "fielding": "79",
-            "handling": "35",
-            "defense": "40",
-            "endurance": "71",
-            "control": "90",
-            "p_power": "75",
-            "movement": "91",
-            "mph": "89",
-            "pitch_1": "Fastball",
-            "pitch_2": "Circle Change",
-            "pitch_3": "Curve",
-            "pitch_4": "Two-Seamer",
-            "pitch_5": "--",
-            "createdAt": "2018-02-27T02:19:53.830Z",
-            "updatedAt": "2018-02-27T02:19:53.830Z",
-            "id": "5a94c049dfcaf8a3070b3284"
-          },
-          {
-            "name": "Miamo, Jose",
-            "age": "30",
-            "height": "6'3\"",
-            "weight": "212 lbs",
-            "year_born": "2048",
-            "position": "SP",
-            "bats": "R",
-            "throws": "R",
-            "draft_year": "2068",
-            "debut_date": "--",
-            "debut_age": "--",
-            "salary": "$500,000",
-            "years": "Arb '78",
-            "arbitration": "Yes",
-            "free_agency": "No",
-            "organizational_roster": "CHW",
-            "player_option": "None",
-            "team_option": "None",
-            "no_trade": "No",
-            "seeking": "$7.3M for 1 yr",
-            "simYear": "2078",
-            "simNumber": "8",
-            "peak_at_draft": "91",
-            "overall": "92",
-            "peak": "92",
-            "upside": "--",
-            "health": "85",
-            "happiness": "-42",
-            "scouting": "9.7",
-            "injury_time": 0,
-            "years_played": "3",
-            "mlb_service": "3 years, 72 days",
-            "roster": "Starter #2",
-            "contact": "53",
-            "o_power": "56",
-            "speed": "61",
-            "eye": "63",
-            "bunt": "79",
-            "arm": "64",
-            "range": "67",
-            "fielding": "76",
-            "handling": "36",
-            "defense": "41",
-            "endurance": "70",
-            "control": "82",
-            "p_power": "76",
-            "movement": "89",
-            "mph": "89",
-            "pitch_1": "Fastball",
-            "pitch_2": "Cutter",
-            "pitch_3": "Circle Change",
-            "pitch_4": "Slider",
-            "pitch_5": "--",
-            "createdAt": "2018-02-27T02:17:02.780Z",
-            "updatedAt": "2018-02-27T02:17:02.780Z",
-            "id": "5a94bf9edfcaf8a3070b2c92"
-          },
-          {
-            "name": "Agee, Adam",
-            "age": "31",
-            "height": "6'0\"",
-            "weight": "207 lbs",
-            "year_born": "2046",
-            "position": "SP",
-            "bats": "R",
-            "throws": "R",
-            "draft_year": "2066",
-            "debut_date": "--",
-            "debut_age": "--",
-            "salary": "$15,000,000",
-            "years": "2",
-            "arbitration": "No",
-            "free_agency": "Yes",
-            "organizational_roster": "CIN",
-            "player_option": "None",
-            "team_option": "None",
-            "no_trade": "No",
-            "seeking": "--",
-            "simYear": "2078",
-            "simNumber": "8",
-            "peak_at_draft": "90",
-            "overall": "92",
-            "peak": "92",
-            "upside": "--",
-            "health": "83",
-            "happiness": "16",
-            "scouting": "9.7",
-            "injury_time": 0,
-            "years_played": "8",
-            "mlb_service": "8 years, 5 days",
-            "roster": "Starter #2",
-            "contact": "48",
-            "o_power": "46",
-            "speed": "66",
-            "eye": "61",
-            "bunt": "67",
-            "arm": "76",
-            "range": "71",
-            "fielding": "78",
-            "handling": "37",
-            "defense": "41",
-            "endurance": "93",
-            "control": "95",
-            "p_power": "77",
-            "movement": "92",
-            "mph": "89",
-            "pitch_1": "Fastball",
-            "pitch_2": "Curve",
-            "pitch_3": "Cutter",
-            "pitch_4": "Slider",
-            "pitch_5": "Circle Change",
-            "createdAt": "2018-02-27T02:17:09.778Z",
-            "updatedAt": "2018-02-27T02:17:09.778Z",
-            "id": "5a94bfa5dfcaf8a3070b2cd3"
-          }
-        ]
-//        this.players = []
-//        let paramStr = this._buildQueryString()
-//        let query = this.$data.rootQuery
-//        if (paramStr) {
-//          query = query + '?' + paramStr
-//        }
-//        let url = process.env.LOCAL_HOST + query
-//        fetch(url)
-//          .then(stream => stream.json())
-//          // eslint-disable-next-line
-//          .then(data => {
-//            this.players = data
-//          })
-//          .catch(error => console.error(error))
+        this.players = []
+        let paramStr = this._buildQueryString()
+        let query = this.$data.rootQuery
+        if (paramStr) {
+          query = query + '?' + paramStr
+        }
+        let url = process.env.LOCAL_HOST + query
+        fetch(url)
+          .then(stream => stream.json())
+          // eslint-disable-next-line
+          .then(data => {
+            this.players = data
+          })
+          .catch(error => console.error(error))
       },
       _updateProspectFilter: function (value) {
         if (value) {
@@ -1853,12 +690,12 @@
     }
   }
 
-//  function addClass (category) {
-//    let items = document.querySelectorAll('.' + category)
-//    for (let i = 0; i < items.length; i++) {
-//      items[i].classList.add('sorted-cell')
-//    }
-//  }
+  //  function addClass (category) {
+  //    let items = document.querySelectorAll('.' + category)
+  //    for (let i = 0; i < items.length; i++) {
+  //      items[i].classList.add('sorted-cell')
+  //    }
+  //  }
 
   function removeAllClasses (name) {
     let items = document.querySelectorAll('.' + name)
@@ -1964,9 +801,9 @@
       next = b.scouting
     } else if (category === 'salary') {
       // eslint-disable-next-line
-      prev = Number(a.salary.replace(/[^0-9\.-]+/g,''))
+      prev = Number(a.salary.replace(/[^0-9\.-]+/g, ''))
       // eslint-disable-next-line
-      next = Number(b.salary.replace(/[^0-9\.-]+/g,''))
+      next = Number(b.salary.replace(/[^0-9\.-]+/g, ''))
     } else if (category === 'happiness') {
       prev = a.happiness
       next = b.happiness
