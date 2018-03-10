@@ -202,21 +202,6 @@
                 <td class="ros has-text-centered small-spacing"></td>
                 <td class="ros has-text-centered small-spacing"></td>
               </tr>
-              <tr class="empty-row">
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
               </tbody>
             </table>
           </transition>
@@ -329,21 +314,6 @@
                 <td class="def has-text-centered small-spacing">{{player.defense}}</td>
                 <td class="def has-text-centered small-spacing"></td>
               </tr>
-              <tr class="empty-row">
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
               </tbody>
             </table>
           </transition>
@@ -449,21 +419,6 @@
                 <td class="ros has-text-centered small-spacing">{{player.pitch_2}}</td>
                 <td class="ros has-text-centered small-spacing">{{player.pitch_3}}</td>
                 <td class="ros has-text-centered small-spacing"></td>
-              </tr>
-              <tr class="empty-row">
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
               </tr>
               </tbody>
             </table>

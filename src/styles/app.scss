@@ -120,7 +120,7 @@ select {
 
 .scrollable {
   display: grid;
-  height: 100%;
+  height: calc(100% - 55px);
   overflow: overlay;
   background-color: $dirty-white;
 }
