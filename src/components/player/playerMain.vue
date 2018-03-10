@@ -5,11 +5,11 @@
         <h6 class="title is-6">{{this.$data.players.length}} Matches</h6>
       </div>
       <div class="line"></div>
+
       <div class="matches">
-        <h6 class="title is-6">Position</h6>
+        <h6 class="title is-6">Hitting</h6>
         <div class="position">
           <div class="offense">
-            <h6 class="">Offense</h6>
             <div class="control hitters">
               <label class="checkbox">
                 <input class='position-filter hitter' type="checkbox" v-model="filteredPosition" value="1B"> 1B
@@ -37,8 +37,13 @@
               </label>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div class="matches">
+        <h6 class="title is-6">Pitching</h6>
+        <div class="position">
           <div class="pitching">
-            <h6 class="">Pitching</h6>
             <div class="control pitchers">
               <label class="checkbox">
                 <input class='position-filter pitcher' type="checkbox" v-model="filteredPosition" value="SP"> SP
@@ -50,6 +55,7 @@
           </div>
         </div>
       </div>
+
       <div class="matches">
         <h6 class="title is-6">Bats</h6>
         <div class="control">
